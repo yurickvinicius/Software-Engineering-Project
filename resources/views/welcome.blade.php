@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel - Welcome to UTFPR!
+                    Laravel - Welcome to UTFPR
                 </div>
 
                 <div class="links">
