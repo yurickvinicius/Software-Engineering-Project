@@ -59,6 +59,8 @@
                 text-transform: uppercase;
             }
 
+            .text_blue{color: #0d6aad; font-size: 25px; font-weight: bold}
+
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -80,6 +82,10 @@
             <div class="content">
                 <div class="title m-b-md">
                     Laravel - Welcome to UTFPR
+                </div>
+
+                <div class="text_blue" style="margin-bottom: 5%">
+                    This is our a presentation page!
                 </div>
 
                 <div class="links">
