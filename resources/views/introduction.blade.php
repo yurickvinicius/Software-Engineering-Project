@@ -13,7 +13,7 @@
 <body class="landing is-preload">
 
 <!-- Page Wrapper -->
-<div id="page-wrapper">
+<div id="page-wrapper-intro">
 
     <!-- Header -->
     <header id="header" class="alt">
@@ -41,10 +41,7 @@
     <section id="banner">
         <div class="inner">
             <h2>Software Engineering</h2>
-            <p>
-                always launching great products to make your life easier
-
-            </p>
+            <p> always launching great products to make your life easier  </p>
 
             <strong>SENSOR READER</strong>
 
@@ -60,7 +57,7 @@
                 <p class="align-left">
                     <strong>
                         <blockquote class="align-justify">
-                            This work represents the practical and implementation of the knowledge acquired in the classroom in the field of Software Engineering, and is being executed at the Federal University of Paraná, Guarapuava Campus. The agile methodology used is Scrum linked to Trello, along with technologies: Github, Php7, Laravel, Mysql, Javascript, Html5, and Css3.
+                            This work represents the practical and implementation of the knowledge acquired in the classroom in the field of Software Engineering, and is being executed at the Federal Technological University of Paraná, Guarapuava Campus. The agile methodology used is Scrum linked to Trello, along with technologies: Github, Php7, Laravel, PostgreSQL, Javascript, Html5, and Css3.
                         </blockquote>
                     </strong>
 
@@ -78,7 +75,7 @@
                 <li><img class="my-icons" src="{{ asset('/introduction/images/css.png') }}" alt="Html"></li>
                 <li><img class="my-icons" src="{{ asset('/introduction/images/js.png') }}" alt="Html"></li>
                 <li><img class="my-icons" src="{{ asset('/introduction/images/php.png') }}" alt="Html"></li>
-                <li><img class="my-icons" src="{{ asset('/introduction/images/mysql.png') }}" alt="Html"></li>
+                <li><img class="my-icons" src="{{ asset('/introduction/images/postgresql.png') }}" alt="Html"></li>
                 <li><img class="my-icons" src="{{ asset('/introduction/images/laravel.png') }}" alt="Html"></li>
                 <li><img class="my-icons" src="{{ asset('/introduction/images/trello.png') }}" alt="Html"></li>
                 <li><img class="my-icons" src="{{ asset('/introduction/images/github.png') }}" alt="Html"></li>
@@ -142,14 +139,13 @@
         </section>
 
         <section class="spotlight">
-            <div class="image"><img src="{{ asset('/introduction/images/phpmy-banner.jpg') }}" alt="" class="banner-vh"  /></div>
+            <div class="image"><img src="{{ asset('/introduction/images/postgresql-banner.jpg') }}" alt="" class="banner-vh"  /></div>
 
             <div class="content">
-                <h2>Php e Mysql</h2>
+                <h2>Php e PostgreSQL</h2>
                 <p>
                 <blockquote>
-                    In the web development scenario, php is a back end language, widely used on the internet for its flexibility and ease of use. Mysql is a relational database, it has become very popular making a great combination with the php language. These two technologies are united.
-
+                    O PostgreSQL, é um sistema de gerenciamento de banco de dados relacional. Ele pode lidar com cargas de trabalho que variam de pequenos a grandes aplicativos voltados para a Internet com muitos usuários simultâneos. A linguagem PHP é uma linguagem de programação e seu campo de ação é o desenvolvimento web. Seu principal objetivo é implementar soluções web rápidas, simples e eficientes.
                 </blockquote>
                 </p>
             </div>
