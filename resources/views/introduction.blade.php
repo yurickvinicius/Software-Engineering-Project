@@ -33,7 +33,7 @@
             <input type="button" id="test" value="imprima">
 
             <!--nav id="nav">
-                <ul>    
+                <ul>
                     <li class="special">
                         <a href="#menu" class="menuToggle"><span>Menu</span></a>
                         <div id="menu">
@@ -175,10 +175,10 @@
             <div class="inner">
                 <header class="major">
                     <h2>Development Team Scrum</h2>
-                    <p><strong>Everton Paulouski</strong> (Scrum Master/Front End/Documents)</p>
-                    <p><strong>Cristhian Albary da Silva</strong> (Database/Back End)</p>
+                    <p><strong>Everton Paulouski</strong> (Scrum Master / Front End / Documents)</p>
+                    <p><strong>Cristhian Albary da Silva</strong> (Database / Back End)</p>
                     <p><strong>Yurick Vinicius Ribas</strong> (Front End / Back End)</p>
-                    <p><strong>Andressa Karoline</strong> (Front End/Back End)</p>
+                    <p><strong>Andressa Karoline Silva Dogado</strong> (Front End / Back End)</p>
                 </header>
 
                 <!--ul class="features">
@@ -200,8 +200,5 @@
             </ul>
         </footer>
     </div>
-
-     
-
 </body>
 </html>
