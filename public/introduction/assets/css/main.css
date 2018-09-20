@@ -276,8 +276,8 @@ input, select, textarea {
 	}
 
 	.banner-vh{
-		padding: 0px 20px;
-		height: vh;
+		padding: 0px 0px;
+		height: 250px;
 		width: 100%;
 	}
 
@@ -3295,7 +3295,7 @@ input, select, textarea {
 
 /* Page Wrapper + Menu */
 
-	#page-wrapper {
+	##banner {
 		-moz-transition: opacity 0.5s ease;
 		-webkit-transition: opacity 0.5s ease;
 		-ms-transition: opacity 0.5s ease;
@@ -3304,7 +3304,7 @@ input, select, textarea {
 		padding-top: 3em;
 	}
 
-		#page-wrapper:before {
+		##banner:before {
 			background: rgba(0, 0, 0, 0);
 			content: '';
 			display: block;
@@ -3399,11 +3399,11 @@ input, select, textarea {
 
 		}
 
-	body.is-menu-visible #page-wrapper {
+	body.is-menu-visible #banner {
 		opacity: 0.35;
 	}
 
-		body.is-menu-visible #page-wrapper:before {
+		body.is-menu-visible #page-wrapper-intro:before {
 			display: block;
 		}
 
@@ -3947,7 +3947,7 @@ input, select, textarea {
 
 /* Landing */
 
-	body.landing #page-wrapper {
+	body.landing #page-wrapper-intro {
 		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
 		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
 		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
@@ -3963,7 +3963,7 @@ input, select, textarea {
 		background-color: rgba(29, 36, 42, 0.9);
 	}
 
-	body.is-mobile.landing #page-wrapper {
+	body.is-mobile.landing #page-wrapper-intro {
 		background: none;
 	}
 
@@ -3980,4 +3980,7 @@ input, select, textarea {
 
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
+	}
+	#animation-es{
+		transition: 0.5s ease-out;
 	}
