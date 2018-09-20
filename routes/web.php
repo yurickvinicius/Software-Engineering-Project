@@ -18,3 +18,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/teste/teste', function () {
+    return 'teste....';
+});
+
+Route::get('/sensor/{modelo}/{valor}', function (){
+    return 'asdfadsfas';
+});
