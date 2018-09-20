@@ -190,14 +190,15 @@
 </div>
 
 <!-- Scripts -->
-<link href="{{ asset('/introduction/assets/js/bootstrap.min.js') }}" >
-<link href="{{ asset('/introduction/assets/js/jquery.min.js') }}" >
-<link href="{{ asset('/introduction/assets/js/jquery.scrollex.min.js') }}" >
-<link href="{{ asset('/introduction/assets/js/jquery.scrolly.min.js') }}" >
-<link href="{{ asset('/introduction/assets/js/browser.min.js') }}" >
-<link href="{{ asset('/introduction/assets/js/breakpoints.min.js') }}" >
-<link href="{{ asset('/introduction/assets/js/util.js') }}" >
-<link href="{{ asset('/introduction/assets/js/main.js') }}" >
+<script src="{{ asset('/introduction/assets/js/bootstrap.min.js') }}" ></script>
+<script src="{{ asset('/introduction/assets/js/jquery.min.js') }}" ></script>
+<script src="{{ asset('/introduction/assets/js/jquery.scrollex.min.js') }}" ></script>
+<script src="{{ asset('/introduction/assets/js/jquery.scrolly.min.js') }}" ></script>
+<script src="{{ asset('/introduction/assets/js/browser.min.js') }}" ></script>
+<script src="{{ asset('/introduction/assets/js/breakpoints.min.js') }}" ></script>
+<script src="{{ asset('/introduction/assets/js/util.js') }}" ></script>
+<script src="{{ asset('/introduction/assets/js/main.js') }}" ></script>
+
 
 </body>
 </html>
