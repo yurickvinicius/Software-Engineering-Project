@@ -276,8 +276,8 @@ input, select, textarea {
 	}
 
 	.banner-vh{
-		padding: 0px 20px;
-		height: vh;
+		padding: 0px 0px;
+		height: 250px;
 		width: 100%;
 	}
 
@@ -3980,4 +3980,7 @@ input, select, textarea {
 
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
+	}
+	#animation-es{
+		transition: 0.5s ease-out;
 	}
