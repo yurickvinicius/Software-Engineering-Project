@@ -206,6 +206,14 @@
 <script src="{{ asset('/introduction/assets/js/util.js') }}" ></script>
 <script src="{{ asset('/introduction/assets/js/main.js') }}" ></script>
 
+<script type="text/javascript">
+
+$(document).ready(function(){
+    alert('This is the prove that javascript is working. This alert is on line 212 of this file')
+    alert('and long live MEXICO!')    
+});
+
+</script>
 
 </body>
 </html>
