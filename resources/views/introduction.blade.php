@@ -9,6 +9,7 @@
     <link href="{{ asset('/introduction/assets/css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('/introduction/assets/css/noscript.css') }}" rel="stylesheet">
 
+    
 </head>
 <body class="landing is-preload">
 
@@ -182,30 +183,8 @@
         </section>
         <!-- /Three -->
 
-<<<<<<< HEAD
     </section>
     <!-- /Two -->
-
-    <!-- Three -->
-    <section id="three" class="wrapper style3 special">
-        <div class="inner">
-            <header class="major">
-                <h2>Development Team Scrum</h2>
-                <p><strong>Everton Paulouski</strong> (Scrum Master/Front End/Documents)</p>
-                <p><strong>Cristhian Albary da Silva</strong> (Database/Back End)</p>
-                <p><strong>Yurick Vinicius Ribas</strong> (Front End / Back End)</p>
-                <p><strong>Andressa Karoline</strong> (Front End/Back End)</p>
-            </header>
-
-            <!--ul class="features">
-                <li class="icon fa-paper-plane-o">
-                    <h3>Arcu accumsan</h3>
-                    <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-                </li>
-            </ul-->
-        </div>
-    </section>
-    <!-- /Three -->
 
     <!-- Footer -->
     <footer id="footer">
@@ -228,16 +207,5 @@
 <script src="{{ asset('/introduction/assets/js/main.js') }}" ></script>
 
 
-=======
-        <!-- Footer -->
-        <footer id="footer">
-            <ul class="icons">
-            </ul>
-            <ul class="copyright">
-                <li>&copy; Sensor Reader</li><li>Design: Software Engineering</li>
-            </ul>
-        </footer>
-    </div>
->>>>>>> f4e0766eb4724bce03e7de4af89afa160a052216
 </body>
 </html>
