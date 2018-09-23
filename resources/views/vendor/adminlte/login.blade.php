@@ -47,10 +47,10 @@
                 </div>
                 <div class="auth-links">
                     <a href="{{ url(config('adminlte.password_reset_url', 'password/reset')) }}"
-                    class="text-center"
-                    >{{ trans('adminlte::adminlte.i_forgot_my_password') }}</a>
+                    class="text-center">{{ trans('adminlte::adminlte.i_forgot_my_password') }}</a>
                 </div>
                 <div class="button">
+                    <a href="{{ url(config('adminlte.register', 'register')) }}" class="btn btn-primary btn-block btn-flat">{{ trans('adminlte::adminlte.register') }}</a>
                     <button type="submit" class="btn btn-primary btn-block btn-flat">{{ trans('adminlte::adminlte.sign_in') }}</button>
                 </div>
             </form>
@@ -71,8 +71,4 @@ $(function () {
 });
 </script>
 @yield('js')
-@stop
-
-@section('css')
-@yield('css')
 @stop
