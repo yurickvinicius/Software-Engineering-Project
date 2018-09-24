@@ -9,15 +9,7 @@
     <link href="{{ asset('/introduction/assets/css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('/introduction/assets/css/noscript.css') }}" rel="stylesheet">
 
-    <!-- Scripts -->
-    <script type="text/javascript" src="{{ asset('/introduction/assets/js/bootstrap.min.js') }}" ></script>
-    <script type="text/javascript" src="{{ asset('/introduction/assets/js/jquery.min.js') }}" ></script>
-    <script type="text/javascript" src="{{ asset('/introduction/assets/js/jquery.scrollex.min.js') }}" ></script>
-    <script type="text/javascript" src="{{ asset('/introduction/assets/js/jquery.scrolly.min.js') }}" ></script>
-    <script type="text/javascript" src="{{ asset('/introduction/assets/js/browser.min.js') }}" ></script>
-    <script type="text/javascript" src="{{ asset('/introduction/assets/js/breakpoints.min.js') }}" ></script>
-    <script type="text/javascript" src="{{ asset('/introduction/assets/js/util.js') }}" ></script>
-    <script type="text/javascript" src="{{ asset('/introduction/assets/js/main.js') }}"></script>
+    
 </head>
 <body class="landing is-preload">
 
@@ -188,14 +180,37 @@
         </section>
         <!-- /Three -->
 
-        <!-- Footer -->
-        <footer id="footer">
-            <ul class="icons">
-            </ul>
-            <ul class="copyright">
-                <li>&copy; Sensor Reader</li><li>Design: Software Engineering</li>
-            </ul>
-        </footer>
-    </div>
+    </section>
+    <!-- /Two -->
+
+    <!-- Footer -->
+    <footer id="footer">
+        <ul class="icons">
+        </ul>
+        <ul class="copyright">
+            <li>&copy; Sensor Reader</li><li>Design: Software Engineering</li>
+        </ul>
+    </footer>
+</div>
+
+<!-- Scripts -->
+<script src="{{ asset('/introduction/assets/js/bootstrap.min.js') }}" ></script>
+<script src="{{ asset('/introduction/assets/js/jquery.min.js') }}" ></script>
+<script src="{{ asset('/introduction/assets/js/jquery.scrollex.min.js') }}" ></script>
+<script src="{{ asset('/introduction/assets/js/jquery.scrolly.min.js') }}" ></script>
+<script src="{{ asset('/introduction/assets/js/browser.min.js') }}" ></script>
+<script src="{{ asset('/introduction/assets/js/breakpoints.min.js') }}" ></script>
+<script src="{{ asset('/introduction/assets/js/util.js') }}" ></script>
+<script src="{{ asset('/introduction/assets/js/main.js') }}" ></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+    alert('This is the prove that javascript is working. This alert is on line 212 of this file')
+    alert('and long live MEXICO!')    
+});
+
+</script>
+
 </body>
 </html>
