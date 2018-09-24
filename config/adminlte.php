@@ -123,18 +123,18 @@ return [
         // ],
         'ACCOUNT SETTINGS',
         [
-            'text' => 'Perfil',
+            'text' => 'Profile',
             'url'  => 'home/profile',
             'icon' => 'user',
         ],
         [
-            'text' => 'Mudar senha',
+            'text' => 'Change password',
             'url'  => 'home/settings',
             'icon' => 'lock',
         ],
         [
-            'text'    => 'Desativar conta',
-            'url'    => 'home/delete',
+            'text'    => 'Deactivate account',
+            'url'    => 'home/deactivate',
             // 'icon' =>
         ],
         // 'LABELS',

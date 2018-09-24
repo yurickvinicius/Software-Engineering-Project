@@ -7,6 +7,8 @@
 
 @section('body_class', 'register-page')
 
+@section('title', 'Register')
+
 @section('body')
     <div class="register-box">
         <div class="register-logo">

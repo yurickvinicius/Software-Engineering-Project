@@ -9,8 +9,7 @@ $this->group(['middleware' => ['auth'], 'prefix' => 'home'], function(){
     Route::post('/profile', 'UserController@profileUpdate')->name('profileUpdate');
     Route::get('/settings', 'UserController@settings')->name('settings');
     Route::post('/settings', 'UserController@settingsUpdate')->name('settingsUpdate');
-    Route::get('/delete', 'UserController@delete')->name('delete');
-    Route::get('/deleteUser', 'UserController@deleteUser')->name('deleteUser');
+    Route::get('/deactivate', 'UserController@deactivateUser')->name('deactivateUser');
 });
 
 Auth::routes();

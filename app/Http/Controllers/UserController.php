@@ -16,7 +16,7 @@ class UserController extends Controller
     {
         $user = auth()->user();
 
-        $user->name = $request->nome;
+        $user->name = $request->name;
         $user->email = $request->email;
         unset($user['password']);
 
@@ -25,11 +25,11 @@ class UserController extends Controller
         if($update)
             return redirect()
                     ->route('profile')
-                    ->with('sucess', 'Dados atualizados com sucesso!');
+                    ->with('sucess', 'Data updated successfully!');
 
         return redirect()
                     ->back()
-                    ->with('error', 'Falha ao atualizar os dados!');
+                    ->with('error', 'Failed to update data!');
     }
 
     public function settings()
@@ -50,19 +50,19 @@ class UserController extends Controller
         if($update)
             return redirect()
                     ->route('settings')
-                    ->with('sucess', 'Senha alterada com sucesso!');
+                    ->with('sucess', 'Password updated successfully!');
 
         return redirect()
                     ->back()
-                    ->with('error', 'Falha ao alterar senha!');
+                    ->with('error', 'Failed to update password!');
     }
 
-    public function delete()
+    public function deactivate()
     {
-        return view('user.delete');
+        return view('user.deactivate');
     }
 
-    public function deleteUser()
+    public function deactivateUser()
     {
         $user = auth()->user();
 
@@ -74,6 +74,6 @@ class UserController extends Controller
 
         return redirect()
                     ->back()
-                    ->with('error', 'Falha ao desativar conta!');
+                    ->with('error', 'Failed to disable account!');
     }
 }

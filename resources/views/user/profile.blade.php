@@ -1,21 +1,19 @@
 @extends('adminlte::page')
 
-@section ('title', 'Perfil')
+@section ('title', 'Profile')
 
 @section('content_header')
-<h1>
-    PERFIL
-</h1>
+<h1>ACCOUNT SETTINGS</h1>
 <ol class="breadcrumb">
-    <li><a href="/admin"><i class="fa fa-dashboard"></i>Painel de Controle</a></li>
-    <li class="active">Perfil</a></li>
+    <li><a href="/home"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+    <li class="active">Profile</a></li>
 </ol>
 @stop
 
 @section('content')
 <div class="box">
     <div class="box-header">
-        <legend>Meu Perfil</legend>
+        <legend>My Profile</legend>
     </div>
     <div class="box-body">
         @if(session('sucess'))
@@ -31,9 +29,9 @@
         <form action="{{ route('profileUpdate') }}" class="form-horizontal" method="post">
             {!! csrf_field() !!}
             <div class="form-group">
-                <label class="control-label col-sm-3" for="nome">Nome: </label>
+                <label class="control-label col-sm-3" for="name">Name: </label>
                 <div class="col-sm-6">
-                    <input type="text" id="nome" name="nome" class="form-control" value="{{ auth()->user()->name }}">
+                    <input type="text" id="name" name="name" class="form-control" value="{{ auth()->user()->name }}">
                 </div>
             </div>
             <div class="form-group">
@@ -43,27 +41,16 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-sm-3" for="password">Senha: </label>
+                <label class="control-label col-sm-3" for="password">Password: </label>
                 <div class="col-sm-6">
                     <input type="text" id="password" name="password" class="form-control" placeholder="******" disabled>
                 </div>
             </div>
             <div class="center-block">
-                <button type="submit" class="btn btn-success">Alterar Dados</button>
-                <button type="submit" class="btn btn-danger">Cancelar</button>
+                <button type="submit" class="btn btn-success col-md-offset-4">Change date</button>
+                <button type="submit" class="btn btn-danger col-md-offset-1">Cancel</button>
             </div>
         </form>
     </div>
 </div>
-@stop
-
-@section('css')
-<style>
-.img-profile img{
-    position: absolute;
-    left: 40%;
-    top: 20%;
-    height: 120px;
-}
-</style>
 @stop

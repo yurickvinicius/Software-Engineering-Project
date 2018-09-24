@@ -6,6 +6,8 @@
     @yield('css')
 @stop
 
+@section('title', 'Login')
+
 @section('body_class', 'login-page')
 
 @section('body')
@@ -13,7 +15,7 @@
     <div class="login-box">
         <div class="login-box-body">
             <div class="login-logo">
-                <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">ACESSO RESTRITO</a>
+                <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">RESTRICTED ACCESS</a>
             </div>
             <!-- /.login-logo -->
             <p class="login-box-msg">{{ trans('adminlte::adminlte.login_message') }}</p>
@@ -50,8 +52,8 @@
                     class="text-center">{{ trans('adminlte::adminlte.i_forgot_my_password') }}</a>
                 </div>
                 <div class="button">
-                    <a href="{{ url(config('adminlte.register', 'register')) }}" class="btn btn-primary btn-block btn-flat">{{ trans('adminlte::adminlte.register') }}</a>
                     <button type="submit" class="btn btn-primary btn-block btn-flat">{{ trans('adminlte::adminlte.sign_in') }}</button>
+                    <a href="{{ url(config('adminlte.register', 'register')) }}" class="btn btn-primary btn-block btn-flat">{{ trans('adminlte::adminlte.register') }}</a>
                 </div>
             </form>
         </div>
