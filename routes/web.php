@@ -14,17 +14,3 @@ $this->group(['middleware' => ['auth'], 'prefix' => 'home'], function(){
 });
 
 Auth::routes();
-<<<<<<< HEAD
-=======
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-
-Route::get('/teste/teste', function () {
-    return 'teste....';
-});
-
-Route::get('/sensor/{modelo}/{valor}', function (){
-    return 'asdfadsfas';
-});
->>>>>>> 467410710f1aa515648cbed6ff01e66d205ec717
