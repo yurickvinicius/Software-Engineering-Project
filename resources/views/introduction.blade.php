@@ -188,7 +188,8 @@
         <ul class="icons">
         </ul>
         <ul class="copyright">
-            <li>&copy; Sensor Reader</li><li>Design: Software Engineering</li>
+            <li>&copy; Sensor Reader</li>
+            <li>Design: Software Engineering</li>
         </ul>
     </footer>
 </div>
@@ -202,15 +203,6 @@
 <script src="{{ asset('/introduction/assets/js/breakpoints.min.js') }}" ></script>
 <script src="{{ asset('/introduction/assets/js/util.js') }}" ></script>
 <script src="{{ asset('/introduction/assets/js/main.js') }}" ></script>
-
-<script type="text/javascript">
-
-$(document).ready(function(){
-    alert('This is the prove that javascript is working. This alert is on line 212 of this file')
-    alert('and long live MEXICO!')    
-});
-
-</script>
 
 </body>
 </html>
