@@ -108,6 +108,7 @@ return [
     */
 
     'menu' => [
+<<<<<<< HEAD
         // 'MAIN NAVIGATION',
         // [
         //     'text' => 'Blog',
@@ -121,6 +122,40 @@ return [
         //     'label'       => 4,
         //     'label_color' => 'success',
         // ],
+=======
+        'REGISTERS',
+        [
+            'text' => 'Users',
+            'url'  => 'home/createUser',
+            'icon'  => 'user-plus',
+        ],
+        [
+            'text' => 'Equipments',
+            'url'  => 'home/createEquipments',
+            'icon'  => 'plus',
+        ],
+        [
+            'text' => 'Sensors',
+            'url'  => 'home/createSensor',
+            'icon'  => 'plus',
+        ],
+        'LISTING',
+        [
+            'text' => 'Users Listing',
+            'url'  => 'home/userListing',
+            'icon'  => 'file',
+        ],
+        [
+            'text' => 'Equipments Listing',
+            'url'  => 'home/listingEquipments',
+            'icon'  => 'file',
+        ],
+        [
+            'text' => 'Sensors Listing',
+            'url'  => 'home/sensorListing',
+            'icon'  => 'file',
+        ],
+>>>>>>> 21d1c8392af21e38b5a78c128fb2dc62667aabbb
         'ACCOUNT SETTINGS',
         [
             'text' => 'Profile',
@@ -137,6 +172,7 @@ return [
             'url'    => 'home/deactivate',
             // 'icon' =>
         ],
+<<<<<<< HEAD
         // 'LABELS',
         // [
         //     'text'       => 'Important',
@@ -150,6 +186,8 @@ return [
         //     'text'       => 'Information',
         //     'icon_color' => 'aqua',
         // ],
+=======
+>>>>>>> 21d1c8392af21e38b5a78c128fb2dc62667aabbb
     ],
 
     /*
