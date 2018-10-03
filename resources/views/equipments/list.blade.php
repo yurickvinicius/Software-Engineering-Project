@@ -35,12 +35,12 @@
                 <th>Name</th>
                 <th>Local</th>
             </tr>
-            <!-- @if (count($equipments) == 0) -->
+            @if (count($equipments) == 0)
             <tr>
                 <td colspan="99" class="text-center">No equipment found.</td>
             </tr>
-            <!-- @endif
-            @foreach ($equipments as $equipment) -->
+            @endif
+            @foreach ($equipments as $equipment)
             <tr>
                 <td class="list-action">
                     <a href="" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></a>
@@ -51,7 +51,7 @@
                 <td>{{ $equipment->name }}</td>
                 <td>{{ $equipment->local }}</td>
             </tr>
-            <!-- @endforeach -->
+            @endforeach
         </table>
     </div>
     <!-- {!! $equipments->links() !!} -->

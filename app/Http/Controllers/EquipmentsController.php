@@ -2,24 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Equipament;
 use Illuminate\Http\Request;
 use App\Http\Controllers;
-use App\Models\Equipments;
 
 class EquipmentsController extends Controller
 {
-    // private $equipment;
-    //
-    // public function __construct(Equipments $equipment) {
-    //     $this->equipment = $equipment;
-    // }
+    private $equipmentModel;
+
+    public function __construct(Equipament $equipament){
+        $this->equipmentModel = $equipament;
+    }
 
     public function createEquipments() {
         return view('equipments.create');
     }
 
     public function listingEquipments() {
-        return view('equipments.list');
+        $equipments = $this->equipmentModel->paginate(10);
+        //dd($equipments);
+        return view('equipments.list', compact('equipments'));
     }
 
     public function showEquipments() {
