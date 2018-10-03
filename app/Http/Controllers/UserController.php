@@ -4,11 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers;
-<<<<<<< HEAD
-
-class UserController extends Controller
-{
-=======
 use App\User;
 
 class UserController extends Controller
@@ -20,7 +15,6 @@ class UserController extends Controller
         $this->$userModel = $user;
     }
 
->>>>>>> 21d1c8392af21e38b5a78c128fb2dc62667aabbb
     public function profile()
     {
         return view('user.profile');
@@ -90,8 +84,6 @@ class UserController extends Controller
                     ->back()
                     ->with('error', 'Failed to disable account!');
     }
-<<<<<<< HEAD
-=======
 
     public function createUser()
     {
@@ -117,5 +109,4 @@ class UserController extends Controller
         $users = User::paginate(10);
         return view('user.list', compact('users'));
     }
->>>>>>> 21d1c8392af21e38b5a78c128fb2dc62667aabbb
 }
