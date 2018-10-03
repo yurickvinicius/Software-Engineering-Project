@@ -20,7 +20,6 @@ class EquipmentsController extends Controller
 
     public function listingEquipments() {
         $equipments = $this->equipmentModel->paginate(10);
-        //dd($equipments);
         return view('equipments.list', compact('equipments'));
     }
 
