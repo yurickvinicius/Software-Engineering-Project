@@ -22,8 +22,6 @@
                 <h1><a href="index.html"> Software Engineering</a></h1>
             </div>
 
-            <!-- <input type="button" id="test" value="imprima"> -->
-
             <nav id="nav">
                 <ul>
                     <li class="special">
@@ -159,8 +157,35 @@
         </section>
         <!-- /Two -->
 
+
+
         <!-- Three -->
-        <section id="three" class="wrapper style3 special">
+        <section id="three" class="wrapper style3 ">
+
+            <ul class="features">
+                <li class="icon fa-paper-plane-o">
+                    <h3>xxxxxxxxxxx</h3>
+                    <p>
+                        Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.
+                    </p>
+                </li>
+            </ul>
+
+            <ul class="features">
+                <li class="icon fa-paper-plane-o">
+                    <h3>xxxxxxxxxxx</h3>
+                    <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                </li>
+            </ul>
+        <!-- /Three -->
+
+        
+
+    </div>
+
+    <!-- Four -->
+         <section id="three" class="wrapper  special">
+
             <div class="inner">
                 <header class="major">
                     <h2>Development Team Scrum</h2>
@@ -169,19 +194,11 @@
                     <p><strong>Yurick Vinicius Ribas</strong> (Front End / Back End)</p>
                     <p><strong>Andressa Karoline Silva Dogado</strong> (Front End / Back End)</p>
                 </header>
-
-                <!-- <ul class="features">
-                    <li class="icon fa-paper-plane-o">
-                        <h3>Arcu accumsan</h3>
-                        <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-                    </li>
-                </ul> -->
             </div>
         </section>
-        <!-- /Three -->
+        <!-- Four -->
 
-    </section>
-    <!-- /Two -->
+
 
     <!-- Footer -->
     <footer id="footer">
@@ -203,6 +220,7 @@
 <script src="{{ asset('/introduction/assets/js/breakpoints.min.js') }}" ></script>
 <script src="{{ asset('/introduction/assets/js/util.js') }}" ></script>
 <script src="{{ asset('/introduction/assets/js/main.js') }}" ></script>
+
 
 </body>
 </html>

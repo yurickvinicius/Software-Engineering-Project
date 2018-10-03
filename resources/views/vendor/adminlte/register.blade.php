@@ -30,6 +30,16 @@
                         </span>
                     @endif
                 </div>
+                <div class="form-group has-feedback {{ $errors->has('login') ? 'has-error' : '' }}">
+                    <input type="text" name="login" class="form-control" value="{{ old('login') }}"
+                           placeholder="Login">
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    @if ($errors->has('login'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('login') }}</strong>
+                        </span>
+                    @endif
+                </div>
                 <div class="form-group has-feedback {{ $errors->has('email') ? 'has-error' : '' }}">
                     <input type="email" name="email" class="form-control" value="{{ old('email') }}"
                            placeholder="{{ trans('adminlte::adminlte.email') }}">
