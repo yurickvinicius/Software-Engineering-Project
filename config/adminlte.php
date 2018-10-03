@@ -137,7 +137,7 @@ return [
         ],
         [
             'text' => 'Sensors Listing',
-            'url'  => 'home/sensorListing',
+            'url'  => 'home/listingSensors',
             'icon'  => 'file',
         ],
         'ACCOUNT SETTINGS',

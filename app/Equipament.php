@@ -8,6 +8,7 @@ class Equipament extends Model
 {
     protected $fillable = [
         'name',
-        'local'
+        'local',
+        'user_id'
     ];
 }

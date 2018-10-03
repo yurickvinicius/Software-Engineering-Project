@@ -16,8 +16,14 @@ $this->group(['middleware' => ['auth'], 'prefix' => 'home'], function(){
 
     Route::get('/createEquipments', 'EquipmentsController@createEquipments')->name('createEquipments');
     Route::get('/listingEquipments', 'EquipmentsController@listingEquipments')->name('listingEquipments');
-    Route::get('/destroyEquipments', 'EquipmentsController@destroyEquipments')->name('destroyEquipments');
+    Route::get('/destroyEquipments/{id}', 'EquipmentsController@destroyEquipments')->name('destroyEquipments');
     Route::get('/showEquipments', 'EquipmentsController@showEquipments')->name('showEquipments');
+    Route::post('/storeEquipment', 'EquipmentsController@storeEquipment')->name('storeEquipment');
+
+    Route::post('/StoreSensor', 'SensorController@storeSensor')->name('storeSensor');
+    Route::get('/listingSensors', 'SensorController@listingSensors')->name('listingSensors');
+    Route::get('/createSensor', 'SensorController@createSensor')->name('createSensor');
+    Route::get('/destroySensor/{id}', 'SensorController@destroySensor')->name('destroySensor');
 });
 
 Auth::routes();

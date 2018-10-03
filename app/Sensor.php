@@ -8,5 +8,11 @@ class Sensor extends Model
 {
     protected $fillable = [
         'name',
+        'equipament_id',
+        'user_id',
     ];
+
+    public function equipament(){
+        return $this->belongsTo(Equipament::class);
+    }
 }

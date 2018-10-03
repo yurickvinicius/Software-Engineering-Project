@@ -20,6 +20,9 @@ class CreateSensorsTable extends Migration
 
             $table->integer('equipament_id')->unsigned();
             $table->foreign('equipament_id')->references('id')->on('equipaments');
+
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

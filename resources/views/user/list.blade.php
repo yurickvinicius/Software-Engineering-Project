@@ -12,7 +12,7 @@
 <div class="box">
     <div class="box-header">
         <legend>User Listing</legend>
-        <a href="{{ route('createUser') }}" class="btn btn-success">New user
+        <a href="{{ route('createUser') }}" class="btn btn-primary">New user
             <i class="fa fa-user-plus"></i>
         </a>
     </div>

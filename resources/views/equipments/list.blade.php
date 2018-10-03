@@ -12,7 +12,7 @@
 <div class="box">
     <div class="box-header">
         <legend>Equipments Listing</legend>
-        <a href="{{ route('createUser') }}" class="btn btn-success">New equipment
+        <a href="{{ route('createEquipments') }}" class="btn btn-primary">New equipment
             <i class="fa fa-user-plus"></i>
         </a>
     </div>
@@ -43,7 +43,7 @@
             @foreach ($equipments as $equipment)
             <tr>
                 <td class="list-action">
-                    <a href="" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></a>
+                    <a href="{{ route('destroyEquipments', ['id'=>$equipment->id]) }}" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></a>
                     <a href="" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a>
                     <a href="" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
                 </td>
