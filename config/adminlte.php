@@ -108,21 +108,6 @@ return [
     */
 
     'menu' => [
-<<<<<<< HEAD
-        // 'MAIN NAVIGATION',
-        // [
-        //     'text' => 'Blog',
-        //     'url'  => 'admin/blog',
-        //     'can'  => 'manage-blog',
-        // ],
-        // [
-        //     'text'        => 'Pages',
-        //     'url'         => 'admin/pages',
-        //     'icon'        => 'file',
-        //     'label'       => 4,
-        //     'label_color' => 'success',
-        // ],
-=======
         'REGISTERS',
         [
             'text' => 'Users',
@@ -155,7 +140,6 @@ return [
             'url'  => 'home/sensorListing',
             'icon'  => 'file',
         ],
->>>>>>> 21d1c8392af21e38b5a78c128fb2dc62667aabbb
         'ACCOUNT SETTINGS',
         [
             'text' => 'Profile',
@@ -172,22 +156,6 @@ return [
             'url'    => 'home/deactivate',
             // 'icon' =>
         ],
-<<<<<<< HEAD
-        // 'LABELS',
-        // [
-        //     'text'       => 'Important',
-        //     'icon_color' => 'red',
-        // ],
-        // [
-        //     'text'       => 'Warning',
-        //     'icon_color' => 'yellow',
-        // ],
-        // [
-        //     'text'       => 'Information',
-        //     'icon_color' => 'aqua',
-        // ],
-=======
->>>>>>> 21d1c8392af21e38b5a78c128fb2dc62667aabbb
     ],
 
     /*
