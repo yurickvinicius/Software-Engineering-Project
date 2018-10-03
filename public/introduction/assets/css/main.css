@@ -2535,11 +2535,11 @@ input, select, textarea {
 			display: block;
 			position: relative;
 			text-align: left;
-			width: 50%;
+			width: 90%;
 		}
 
 			.features li:nth-child(1) {
-				background-color: rgba(0, 0, 0, 0.035);
+				background-color: #99ccff/*rgba(0, 0, 0, 0.035)*/;
 			}
 
 			.features li:nth-child(2) {
@@ -2580,7 +2580,7 @@ input, select, textarea {
 
 			.features li:before {
 				display: block;
-				color: #00ffcc;
+				color: #000066;
 				position: absolute;
 				left: 1.75em;
 				top: 2.75em;
@@ -2956,8 +2956,8 @@ input, select, textarea {
 		}
 
 		.wrapper.style3 {
-			background-color: #505393;
-			color: #d3d4e4;
+			background-color: #ccffff;
+			color: black;
 		}
 
 			.wrapper.style3 strong, .wrapper.style3 b {
@@ -2965,7 +2965,7 @@ input, select, textarea {
 			}
 
 			.wrapper.style3 h2, .wrapper.style3 h3, .wrapper.style3 h4, .wrapper.style3 h5, .wrapper.style3 h6 {
-				color: #ffffff;
+				color: #000066;
 			}
 
 			.wrapper.style3 hr {

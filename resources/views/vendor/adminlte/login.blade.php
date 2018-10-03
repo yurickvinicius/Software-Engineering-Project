@@ -6,6 +6,8 @@
     @yield('css')
 @stop
 
+@section('title', 'Login')
+
 @section('body_class', 'login-page')
 
 @section('body')
@@ -13,20 +15,20 @@
     <div class="login-box">
         <div class="login-box-body">
             <div class="login-logo">
-                <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">ACESSO RESTRITO</a>
+                <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">RESTRICTED ACCESS</a>
             </div>
             <!-- /.login-logo -->
             <p class="login-box-msg">{{ trans('adminlte::adminlte.login_message') }}</p>
             <form action="{{ url(config('adminlte.login_url', 'login')) }}" method="post">
                 {!! csrf_field() !!}
 
-                <div class="form-group has-feedback {{ $errors->has('email') ? 'has-error' : '' }}">
-                    <input type="email" name="email" class="form-control" value="{{ old('email') }}"
-                    placeholder="{{ trans('adminlte::adminlte.email') }}">
+                <div class="form-group has-feedback {{ $errors->has('login') ? 'has-error' : '' }}">
+                    <input type="text" name="login" class="form-control" value="{{ old('login') }}"
+                    placeholder="Login">
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                    @if ($errors->has('email'))
+                    @if ($errors->has('login'))
                     <span class="help-block">
-                        <strong>{{ $errors->first('email') }}</strong>
+                        <strong>{{ $errors->first('login') }}</strong>
                     </span>
                     @endif
                 </div>
@@ -47,11 +49,11 @@
                 </div>
                 <div class="auth-links">
                     <a href="{{ url(config('adminlte.password_reset_url', 'password/reset')) }}"
-                    class="text-center"
-                    >{{ trans('adminlte::adminlte.i_forgot_my_password') }}</a>
+                    class="text-center">{{ trans('adminlte::adminlte.i_forgot_my_password') }}</a>
                 </div>
                 <div class="button">
                     <button type="submit" class="btn btn-primary btn-block btn-flat">{{ trans('adminlte::adminlte.sign_in') }}</button>
+                    <a href="{{ url(config('adminlte.register', 'register')) }}" class="btn btn-primary btn-block btn-flat">{{ trans('adminlte::adminlte.register') }}</a>
                 </div>
             </form>
         </div>
@@ -71,8 +73,4 @@ $(function () {
 });
 </script>
 @yield('js')
-@stop
-
-@section('css')
-@yield('css')
 @stop

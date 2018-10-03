@@ -7,6 +7,8 @@
 
 @section('body_class', 'register-page')
 
+@section('title', 'Register')
+
 @section('body')
     <div class="register-box">
         <div class="register-logo">
@@ -25,6 +27,16 @@
                     @if ($errors->has('name'))
                         <span class="help-block">
                             <strong>{{ $errors->first('name') }}</strong>
+                        </span>
+                    @endif
+                </div>
+                <div class="form-group has-feedback {{ $errors->has('login') ? 'has-error' : '' }}">
+                    <input type="text" name="login" class="form-control" value="{{ old('login') }}"
+                           placeholder="Login">
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    @if ($errors->has('login'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('login') }}</strong>
                         </span>
                     @endif
                 </div>

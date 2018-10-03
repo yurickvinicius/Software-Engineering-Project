@@ -22,24 +22,19 @@
                 <h1><a href="index.html"> Software Engineering</a></h1>
             </div>
 
-            <input type="button" id="test" value="imprima">
-
-            <!--nav id="nav">
+            <nav id="nav">
                 <ul>
                     <li class="special">
                         <a href="#menu" class="menuToggle"><span>Menu</span></a>
                         <div id="menu">
-                            <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="generic.html">Generic</a></li>
-                                <li><a href="elements.html">Elements</a></li>
-                                <li><a href="#">Sign Up</a></li>
-                                <li><a href="#">Log In</a></li>
+                            <ul>=
+                                <li><a href="{{ url(config('adminlte.register', 'register')) }}">Sign Up</a></li>
+                                <li><a href="{{ url(config('adminlte.login', 'login')) }}">Log In</a></li>
                             </ul>
                         </div>
                     </li>
                 </ul>
-            </nav-->
+            </nav>
         </header>
         <!-- /Header -->
 
@@ -100,9 +95,9 @@
                     <h2>Trello</h2>
 
                     <p>
-                    <blockquote>
-                        Trello is an extremely versatile project management tool that can be adjusted according to your needs. You can use it to organize your work tasks and link it with Scrum methodologies easily very effectively.
-                    </blockquote>
+                        <blockquote>
+                            Trello is an extremely versatile project management tool that can be adjusted according to your needs. You can use it to organize your work tasks and link it with Scrum methodologies easily very effectively.
+                        </blockquote>
                     </p>
                 </div>
             </section>
@@ -113,9 +108,9 @@
                 <div class="content">
                     <h2>Laravel</h2>
                     <p>
-                    <blockquote>
-                        Laravel is a free and open source PHP development framework whose main goal is to enable you to work in a structured and fast way.
-                    </blockquote>
+                        <blockquote>
+                            Laravel is a free and open source PHP development framework whose main goal is to enable you to work in a structured and fast way.
+                        </blockquote>
                     </p>
                 </div>
             </section>
@@ -126,9 +121,9 @@
                 <div class="content">
                     <h2>Github</h2>
                     <p>
-                    <blockquote>
-                        GitHub is a source code hosting platform with version control that uses Git. It allows programmers, utilities, or any user on the platform to contribute to private and / or Open Source projects from anywhere in the world.
-                    </blockquote>
+                        <blockquote>
+                            GitHub is a source code hosting platform with version control that uses Git. It allows programmers, utilities, or any user on the platform to contribute to private and / or Open Source projects from anywhere in the world.
+                        </blockquote>
                     </p>
                 </div>
             </section>
@@ -139,9 +134,9 @@
                 <div class="content">
                     <h2>Html, Css, Js</h2>
                     <p>
-                    <blockquote>
-                        Html, Css, and Javascript are front end languages ​​used to build the visual structure of the application. The Html, marks the elements of the page, while the CSS makes the stylization of the elements. In turn the javascript of life and movement the pages making them more dynamic.
-                    </blockquote>
+                        <blockquote>
+                            Html, Css, and Javascript are front end languages ​​used to build the visual structure of the application. The Html, marks the elements of the page, while the CSS makes the stylization of the elements. In turn the javascript of life and movement the pages making them more dynamic.
+                        </blockquote>
                     </p>
                 </div>
             </section>
@@ -152,9 +147,9 @@
                 <div class="content">
                     <h2>Php e PostgreSQL</h2>
                     <p>
-                    <blockquote>
-                        PostgreSQL is a relational database management system. It can handle workloads ranging from small to large Internet-facing applications with many concurrent users. The PHP language is a programming language and its field of action is web development. Its main goal is to implement fast, simple and efficient web solutions.
-                    </blockquote>
+                        <blockquote>
+                            PostgreSQL is a relational database management system. It can handle workloads ranging from small to large Internet-facing applications with many concurrent users. The PHP language is a programming language and its field of action is web development. Its main goal is to implement fast, simple and efficient web solutions.
+                        </blockquote>
                     </p>
                 </div>
             </section>
@@ -162,8 +157,35 @@
         </section>
         <!-- /Two -->
 
+
+
         <!-- Three -->
-        <section id="three" class="wrapper style3 special">
+        <section id="three" class="wrapper style3 ">
+
+            <ul class="features">
+                <li class="icon fa-paper-plane-o">
+                    <h3>xxxxxxxxxxx</h3>
+                    <p>
+                        Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.
+                    </p>
+                </li>
+            </ul>
+
+            <ul class="features">
+                <li class="icon fa-paper-plane-o">
+                    <h3>xxxxxxxxxxx</h3>
+                    <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                </li>
+            </ul>
+        <!-- /Three -->
+
+        
+
+    </div>
+
+    <!-- Four -->
+         <section id="three" class="wrapper  special">
+
             <div class="inner">
                 <header class="major">
                     <h2>Development Team Scrum</h2>
@@ -172,26 +194,19 @@
                     <p><strong>Yurick Vinicius Ribas</strong> (Front End / Back End)</p>
                     <p><strong>Andressa Karoline Silva Dogado</strong> (Front End / Back End)</p>
                 </header>
-
-                <!--ul class="features">
-                    <li class="icon fa-paper-plane-o">
-                        <h3>Arcu accumsan</h3>
-                        <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-                    </li>
-                </ul-->
             </div>
         </section>
-        <!-- /Three -->
+        <!-- Four -->
 
-    </section>
-    <!-- /Two -->
+
 
     <!-- Footer -->
     <footer id="footer">
         <ul class="icons">
         </ul>
         <ul class="copyright">
-            <li>&copy; Sensor Reader</li><li>Design: Software Engineering</li>
+            <li>&copy; Sensor Reader</li>
+            <li>Design: Software Engineering</li>
         </ul>
     </footer>
 </div>
@@ -206,14 +221,6 @@
 <script src="{{ asset('/introduction/assets/js/util.js') }}" ></script>
 <script src="{{ asset('/introduction/assets/js/main.js') }}" ></script>
 
-<script type="text/javascript">
-
-$(document).ready(function(){
-    alert('This is the prove that javascript is working. This alert is on line 212 of this file')
-    alert('and long live MEXICO!')    
-});
-
-</script>
 
 </body>
 </html>
