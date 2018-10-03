@@ -7,5 +7,6 @@
 @stop
 
 @section('content')
-    <p>You are logged in!</p>
+    <p>O sistema tem como função principal o cadastro de sensores de qualquer natureza para captação de dados, o controle e gestão de informações
+        captadas e transmitidas por um hardware para um endereço web específico utilizando requisição HTTP\GET.</p>
 @stop
