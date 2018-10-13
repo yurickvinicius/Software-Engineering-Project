@@ -106,55 +106,72 @@ return [
     | layout. The 'can' is a filter on Laravel's built in Gate functionality.
     |
     */
-
     'menu' => [
-        'REGISTERS',
         [
-            'text' => 'Users',
-            'url'  => 'home/createUser',
-            'icon'  => 'user-plus',
+            'text' => 'REGISTER',
+            'url'  => 'home/register',
+            'icon' => 'plus',
+            'submenu' => [
+                [
+                    'text' => 'Users',
+                    'url'  => 'home/createUser',
+                    'icon'  => 'user-plus',
+                ],
+                [
+                    'text' => 'Equipments',
+                    'url'  => 'home/createEquipments',
+                    'icon'  => 'plus',
+                ],
+                [
+                    'text' => 'Sensors',
+                    'url'  => 'home/createSensor',
+                    'icon'  => 'plus',
+                ],
+            ],
         ],
         [
-            'text' => 'Equipments',
-            'url'  => 'home/createEquipments',
-            'icon'  => 'plus',
+            'text' => 'LISTING',
+            'url' => 'home/listing',
+            'icon' => 'file',
+            'submenu' => [
+                [
+                    'text' => 'Users',
+                    'url'  => 'home/listingUsers',
+                    'icon'  => 'file',
+                ],
+                [
+                    'text' => 'Equipments',
+                    'url'  => 'home/listingEquipments',
+                    'icon'  => 'file',
+                ],
+                [
+                    'text' => 'Sensors',
+                    'url'  => 'home/listingSensors',
+                    'icon'  => 'file',
+                ],
+            ],
         ],
         [
-            'text' => 'Sensors',
-            'url'  => 'home/createSensor',
-            'icon'  => 'plus',
-        ],
-        'LISTING',
-        [
-            'text' => 'Users Listing',
-            'url'  => 'home/userListing',
-            'icon'  => 'file',
-        ],
-        [
-            'text' => 'Equipments Listing',
-            'url'  => 'home/listingEquipments',
-            'icon'  => 'file',
-        ],
-        [
-            'text' => 'Sensors Listing',
-            'url'  => 'home/listingSensors',
-            'icon'  => 'file',
-        ],
-        'ACCOUNT SETTINGS',
-        [
-            'text' => 'Profile',
-            'url'  => 'home/profile',
-            'icon' => 'user',
-        ],
-        [
-            'text' => 'Change password',
-            'url'  => 'home/settings',
-            'icon' => 'lock',
-        ],
-        [
-            'text'    => 'Deactivate account',
-            'url'    => 'home/deactivate',
-            // 'icon' =>
+            'text' => 'ACCOUNT SETTINGS',
+            'url' => 'home/profile',
+            'icon' => 'cog',
+            'submenu' => [
+                [
+                    'text' => 'Profile',
+                    'url'  => 'home/profile',
+                    'icon' => 'user',
+                ],
+                [
+                    'text' => 'Change password',
+                    'url'  => 'home/settings',
+                    'icon' => 'lock',
+                ],
+                [
+                    'text'   => 'Deactivate account',
+                    'url'    => 'home/deactivate',
+                    'icon'   => 'user-times',
+                ],
+            ],
         ],
     ],
 
