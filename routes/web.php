@@ -14,6 +14,7 @@ $this->group(['middleware' => ['auth'], 'prefix' => 'home'], function(){
     Route::get('/deactivate', 'UserController@deactivateUser')->name('deactivateUser');
 
     Route::get('/createUser', 'UserController@createUser')->name('createUser');
+    Route::post('/storeUser', 'UserController@storeUser')->name('storeUser');
     Route::get('/listingUsers', 'UserController@userListing')->name('userListing');
 
     Route::get('/createEquipments', 'EquipmentsController@createEquipments')->name('createEquipments');

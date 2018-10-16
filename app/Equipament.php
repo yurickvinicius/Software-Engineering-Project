@@ -9,6 +9,7 @@ class Equipament extends Model
     protected $fillable = [
         'name',
         'local',
-        'user_id'
+        'user_id',
+        'in_use'
     ];
 }

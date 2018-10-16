@@ -18,7 +18,7 @@ class SensorController extends Controller
     }
 
     public function createSensor() {
-        $equipaments = $this->equipamentModel->paginate(10);
+        $equipaments = $this->equipamentModel->where('in_use','<>',0)->get();
         return view('sensor.create', compact('equipaments'));
     }
 
@@ -31,12 +31,20 @@ class SensorController extends Controller
     }
 
     public function listingSensors() {
-        $sensors = $this->sensorModel->paginate(10);
+        $sensors = $this->sensorModel
+            ->where('in_use','<>',0)
+            ->paginate(10);
+            
         return view('sensor.list', compact('sensors'));
     }
 
     public function destroySensor(Request $request, $id){
-        $this->sensorModel->find($id)->delete($id);
+        $this->sensorModel->find($id)
+            ->update(
+                [
+                    'in_use' => 0,
+                ]
+            );
 
         return redirect()
             ->route('listingSensors')

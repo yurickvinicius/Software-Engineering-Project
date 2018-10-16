@@ -50,6 +50,23 @@
                         </span>
                     @endif
                 </div>
+
+                
+                <div class="form-group has-feedback {{ $errors->has('type') ? 'has-error' : '' }}">
+                    <select class="form-control" name="type" id="type">
+                        <option value="0">Select type</option>
+                        <option value="1">Administrador</option>
+                        <option value="2">Comum</option>
+                    </select>  
+                    @if ($errors->has('type'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('type') }}</strong>
+                        </span>
+                    @endif                 
+                </div>
+
+                
+
                 <div class="form-group has-feedback {{ $errors->has('password') ? 'has-error' : '' }}">
                     <input type="password" name="password" class="form-control"
                            placeholder="{{ trans('adminlte::adminlte.password') }}">
