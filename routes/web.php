@@ -3,6 +3,8 @@ Route::get('/', function () {
     return view('introduction');
 })->name('index');
 
+Route::get('/read', 'ReadController@read')->name('read');
+
 $this->group(['middleware' => ['auth'], 'prefix' => 'home'], function(){
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/profile', 'UserController@profile')->name('profile');
