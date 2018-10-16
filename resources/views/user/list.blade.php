@@ -40,7 +40,7 @@
             @foreach ($users as $user)
             <tr>
                 <td class="list-action">
-                    <a href="" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></a>
+                    <a href="{{ route('userDestroy', ['id'=>$user->id]) }}" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></a>
                     <a href="" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a>
                     <a href="" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
                 </td>

@@ -72,6 +72,24 @@ class UserController extends Controller
         return view('user.deactivate');
     }
 
+    public function destroy($id){
+        $delete = $this->userModel
+            ->find($id)
+            ->update(
+                [
+                    'in_use' => 0,
+                ]
+            );
+
+        if($delete)
+            return redirect()
+                    ->route('userListing');
+
+        return redirect()
+                    ->back()
+                    ->with('error', 'Failed to disable account!');
+    }
+
     public function deactivateUser()
     {
         $user = auth()->user();
@@ -132,7 +150,9 @@ class UserController extends Controller
 
     public function userListing()
     {
-        $users = User::paginate(10);
+        $users = $this->userModel
+            ->where('in_use','<>',0)
+            ->paginate(10);
         return view('user.list', compact('users'));
     }
 }

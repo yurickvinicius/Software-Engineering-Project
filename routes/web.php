@@ -16,6 +16,7 @@ $this->group(['middleware' => ['auth'], 'prefix' => 'home'], function(){
     Route::get('/createUser', 'UserController@createUser')->name('createUser');
     Route::post('/storeUser', 'UserController@storeUser')->name('storeUser');
     Route::get('/listingUsers', 'UserController@userListing')->name('userListing');
+    Route::get('/destroyUser/{id}', 'UserController@destroy')->name('userDestroy');
 
     Route::get('/createEquipments', 'EquipmentsController@createEquipments')->name('createEquipments');
     Route::get('/listingEquipments', 'EquipmentsController@listingEquipments')->name('listingEquipments');
