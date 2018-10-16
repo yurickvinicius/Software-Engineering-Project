@@ -13,18 +13,26 @@ $this->group(['middleware' => ['auth'], 'prefix' => 'home'], function(){
 
     Route::get('/createUser', 'UserController@createUser')->name('createUser');
     Route::get('/listingUsers', 'UserController@userListing')->name('userListing');
+    Route::get('/deleteUser', 'UserController@deleteUser')->name('deleteUser');
+    Route::get('/showUser/{id}', 'UserController@showUser')->name('showUser');
+    Route::get('/editUser/{id}', 'UserController@editUser')->name('editUser');
+    Route::post('/updateUser', 'UserController@updateUser')->name('updateUser');
 
     Route::get('/createEquipments', 'EquipmentsController@createEquipments')->name('createEquipments');
-    Route::get('/listingEquipments', 'EquipmentsController@listingEquipments')->name('listingEquipments');
-    Route::get('/destroyEquipments/{id}', 'EquipmentsController@destroyEquipments')->name('destroyEquipments');
-    Route::get('/showEquipments', 'EquipmentsController@showEquipments')->name('showEquipments');
     Route::post('/storeEquipment', 'EquipmentsController@storeEquipment')->name('storeEquipment');
-    Route::post('/editEquipment', 'EquipmentsController@editEquipment')->name('editEquipment');
+    Route::get('/listingEquipments', 'EquipmentsController@listingEquipments')->name('listingEquipments');
+    Route::get('/destroyEquipment/{id}', 'EquipmentsController@destroyEquipments')->name('destroyEquipment');
+    Route::get('/showEquipment/{id}', 'EquipmentsController@showEquipments')->name('showEquipment');
+    Route::get('/editEquipment/{id}', 'EquipmentsController@editEquipment')->name('editEquipment');
+    Route::post('/updateEquipment', 'EquipmentsController@updateEquipment')->name('updateEquipment');
 
     Route::get('/createSensor', 'SensorController@createSensor')->name('createSensor');
+    Route::post('/storeSensor', 'SensorController@storeSensor')->name('storeSensor');
     Route::get('/listingSensors', 'SensorController@listingSensors')->name('listingSensors');
     Route::get('/destroySensor/{id}', 'SensorController@destroySensor')->name('destroySensor');
-    Route::post('/storeSensor', 'SensorController@storeSensor')->name('storeSensor');
+    Route::get('/showSensor/{id}', 'SensorController@showSensor')->name('showSensor');
+    Route::get('/editSensor/{id}', 'SensorController@editSensor')->name('editSensor');
+    Route::post('/updateSensor', 'SensorController@updateSensor')->name('updateSensor');
 });
 
 Auth::routes();

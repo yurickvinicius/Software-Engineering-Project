@@ -46,8 +46,8 @@
                 <tr>
                     <td class="list-action">
                         <a href="{{ route('destroySensor', ['id'=>$sensor->id]) }}" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></a>
-                        <a href="" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a>
-                        <a href="" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
+                        <a href="{{ route('editSensor', $sensor->id)}}" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a>
+                        <a href="{{ route('showSensor', $sensor->id) }}" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
                     </td>
                     <td>{{ $sensor->id }}</td>
                     <td>{{ $sensor->name }}</td>

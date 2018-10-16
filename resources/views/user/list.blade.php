@@ -40,9 +40,9 @@
             @foreach ($users as $user)
             <tr>
                 <td class="list-action">
-                    <a href="" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></a>
-                    <a href="" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a>
-                    <a href="" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
+                    <a href="{{ route('deleteUser', $user->id) }}" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></a>
+                    <a href="{{ route('editUser', $user->id) }}" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a>
+                    <a href="{{ route('showUser', $user->id) }}" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
                 </td>
                 <td>{{ $user->id }}</td>
                 <td>{{ $user->name }}</td>

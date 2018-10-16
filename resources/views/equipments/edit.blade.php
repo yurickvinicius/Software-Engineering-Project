@@ -12,6 +12,10 @@
 <div class="box">
     <div class="box-header">
         <legend>Edit Equipaments</legend>
+        <a href="{{ route('listingEquipments') }}" class="btn btn-primary">
+            <i class="fa fa-arrow-left"></i>
+            Return
+        </a>
     </div>
     <div class="box-body">
         @if(session('sucess'))
@@ -24,7 +28,7 @@
             {{ session('error') }}
         </p>
         @endif
-        <form action="{{ route('editEquipment') }}" class="form-horizontal" method="post">
+        <form action="{{ route('updateEquipment') }}" class="form-horizontal" method="post">
             {!! csrf_field() !!}
 
             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
@@ -32,16 +36,16 @@
             <div class="form-group">
                 <label class="control-label col-sm-3" for="name">Name: </label>
                 <div class="col-sm-6">
-                    <input type="text" id="name" name="name" class="form-control" placeholder={{ $equipament->name }}>
+                    <input type="text" id="name" name="name" class="form-control" value="{{ $equipment->name }}">
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-3" for="local">Local: </label>
                 <div class="col-sm-6">
-                    <input type="text" id="local" name="local" class="form-control" placeholder="{{ $equipament->local}}">
+                    <input type="text" id="local" name="local" class="form-control" value="{{ $equipment->local }}">
                 </div>
             </div>
-            <input type="hidden" value="">
+            <input type="hidden" name="id" value="{{ $equipment->id}}">
             <div class="center-block">
                 <button type="submit" class="btn btn-success col-md-offset-4">Change equipament</button>
                 <button type="submit" class="btn btn-danger col-md-offset-1">Cancel</button>

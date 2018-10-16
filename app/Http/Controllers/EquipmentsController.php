@@ -19,9 +19,6 @@ class EquipmentsController extends Controller
     }
 
     public function storeEquipment(Request $request){
-
-        //dd($request->all());
-
         $this->equipmentModel->create($request->all());
 
         return redirect()
@@ -30,23 +27,53 @@ class EquipmentsController extends Controller
     }
 
     public function listingEquipments() {
-        $equipments = $this->equipmentModel->paginate(10);
+        $equipments = $this->equipmentModel
+            ->where('in_use','<>',0)
+            ->paginate(10);
         return view('equipments.list', compact('equipments'));
     }
 
-    public function showEquipments() {
-        return view('equipments.show');
+    public function showEquipments(Request $request) {
+        $equipment = $this->equipmentModel->find($request->id);
+        return view('equipments.show', compact('equipment'));
     }
 
     public function destroyEquipments(Request $request, $id){
-        //die($id);
-        //dd($request->all());
-
-        $this->equipmentModel->find($id)->delete($id);
-
+        $this->equipmentModel->find($id)
+            ->update(
+                [
+                    'in_use' => 0,
+                ]
+            );
         return redirect()
             ->route('listingEquipments')
             ->with('sucess', 'Equipament removed with successfully!');
     }
 
+    public function editEquipment(Request $request) {
+        $equipment = $this->equipmentModel->find($request->id);
+        return view('equipments.edit', compact('equipment'));
+    }
+
+    public function updateEquipment(Request $request) {
+        if($request->name == "" || $request->local == "") {
+            return redirect()
+            ->back()
+            ->with('error', 'Preencha os campos obrigatórios.');
+        }
+
+        $equipment = $this->equipmentModel->find($request->id);
+        $equipment->name = $request->name;
+        $equipment->local = $request->local;
+        $update = $equipment->save();
+
+        if($update)
+            return redirect()
+                    ->route('listingEquipments')
+                    ->with('sucess', 'Equipment updated successfully!');
+
+        return redirect()
+                    ->back()
+                    ->with('error', 'Failed to update equipment!');
+    }
 }
