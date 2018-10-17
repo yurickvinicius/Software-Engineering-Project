@@ -7,6 +7,7 @@ use App\Http\Controllers;
 use App\User;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\UserRequest;
+use App\Http\Requests\UserEditRequest;
 
 class UserController extends Controller
 {
@@ -28,6 +29,7 @@ class UserController extends Controller
 
         $user->name = $request->name;
         $user->email = $request->email;
+        
         unset($user['password']);
 
         $update = $user->save();
@@ -145,6 +147,7 @@ class UserController extends Controller
     {
         $users = $this->userModel
             ->where('in_use','<>',0)
+            ->orderBy('id', 'desc')
             ->paginate(10);
         return view('user.list', compact('users'));
     }
@@ -159,12 +162,13 @@ class UserController extends Controller
         return view('user.edit', compact('user'));
     }
 
-    public function updateUser(Request $request) {
+    public function updateUser(UserEditRequest $request) {
         $user = $this->userModel->find($request->id);
         // dd($user);
         $user->name = $request->name;
         $user->login = $request->login;
         $user->email = $request->email;
+        $user->type = $request->type;
         if($user['password'] != null)
         $user['password'] = bcrypt($user['password']);
         else unset($user['password']);

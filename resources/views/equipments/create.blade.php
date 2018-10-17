@@ -33,16 +33,27 @@
 
             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
 
-            <div class="form-group">
+            <div class="form-group has-feedback {{ $errors->has('name') ? 'has-error' : '' }}">
                 <label class="control-label col-sm-3" for="name">Name: </label>
                 <div class="col-sm-6">
-                    <input type="text" id="name" name="name" class="form-control" placeholder="name">
+                    <input type="text" id="name" name="name" value="{{ old('name') }}" class="form-control" placeholder="name">
+                    @if ($errors->has('name'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('name') }}</strong>
+                    </span>
+                    @endif
                 </div>
             </div>
-            <div class="form-group">
+
+            <div class="form-group has-feedback {{ $errors->has('local') ? 'has-error' : '' }}">
                 <label class="control-label col-sm-3" for="local">Local: </label>
                 <div class="col-sm-6">
                     <input type="text" id="local" name="local" class="form-control" placeholder="local">
+                    @if ($errors->has('local'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('local') }}</strong>
+                    </span>
+                    @endif
                 </div>
             </div>
             <input type="hidden" value="">

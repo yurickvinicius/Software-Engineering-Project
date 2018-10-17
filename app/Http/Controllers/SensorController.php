@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Equipament;
 use App\Sensor;
 use Illuminate\Http\Request;
+use App\Http\Requests\SensorRequest;
 
 class SensorController extends Controller
 {
@@ -22,7 +23,7 @@ class SensorController extends Controller
         return view('sensor.create', compact('equipaments'));
     }
 
-    public function storeSensor(Request $request){
+    public function storeSensor(SensorRequest $request){
         $this->sensorModel->create($request->all());
 
         return redirect()
@@ -33,6 +34,7 @@ class SensorController extends Controller
     public function listingSensors() {
         $sensors = $this->sensorModel
             ->where('in_use','<>',0)
+            ->orderBy('id', 'desc')
             ->paginate(10);
 
         return view('sensor.list', compact('sensors'));
@@ -63,7 +65,7 @@ class SensorController extends Controller
         return view('sensor.edit', compact('sensor', 'equipaments'));
     }
 
-    public function updateSensor(Request $request) {
+    public function updateSensor(SensorRequest $request) {
         if($request->name == "" || $request->equipament_id == "") {
             return redirect()
             ->back()

@@ -31,12 +31,18 @@
         <form action="{{ route('updateSensor') }}" class="form-horizontal" method="post">
             {!! csrf_field() !!}
 
-            <div class="form-group">
+            <div class="form-group has-feedback {{ $errors->has('name') ? 'has-error' : '' }}">
                 <label class="control-label col-sm-3" for="name">Name: </label>
                 <div class="col-sm-6">
                     <input type="text" id="name" name="name" class="form-control" value="{{ $sensor->name}}">
+                    @if ($errors->has('name'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('name') }}</strong>
+                    </span>
+                    @endif
                 </div>
             </div>
+
             <div class="form-group">
                 <label class="control-label col-sm-3" for="equipament">Equipament: </label>
                 <div class="col-sm-6">

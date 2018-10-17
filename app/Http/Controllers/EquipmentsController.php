@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Equipament;
 use Illuminate\Http\Request;
 use App\Http\Controllers;
+use App\Http\Requests\EquipamentRequest;
 
 class EquipmentsController extends Controller
 {
@@ -18,7 +19,7 @@ class EquipmentsController extends Controller
         return view('equipments.create');
     }
 
-    public function storeEquipment(Request $request){
+    public function storeEquipment(EquipamentRequest $request){
         $this->equipmentModel->create($request->all());
 
         return redirect()
@@ -29,6 +30,7 @@ class EquipmentsController extends Controller
     public function listingEquipments() {
         $equipments = $this->equipmentModel
             ->where('in_use','<>',0)
+            ->orderBy('id', 'desc')
             ->paginate(10);
         return view('equipments.list', compact('equipments'));
     }
@@ -56,7 +58,7 @@ class EquipmentsController extends Controller
         return view('equipments.edit', compact('equipment'));
     }
 
-    public function updateEquipment(Request $request) {
+    public function updateEquipment(EquipamentRequest $request) {
         if($request->name == "" || $request->local == "") {
             return redirect()
             ->back()

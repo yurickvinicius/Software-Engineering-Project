@@ -48,7 +48,7 @@
             <tr>
                 @if(auth()->user()->type == 1)
                 <td class="list-action">
-                    <!-- <a href="{{ route('destroyEquipment', $equipment->id) }}" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></a> -->
+                    <a href="{{ route('destroyEquipment', $equipment->id) }}" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></a>
                     <a href="{{ route('editEquipment', $equipment->id) }}" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a>
                     <a href="{{ route('showEquipment', $equipment->id) }}" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
                 </td>
