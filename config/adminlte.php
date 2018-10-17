@@ -128,6 +128,7 @@ return [
                     'icon'  => 'plus',
                 ],
             ],
+            'can' => 'user-admin',
         ],
         [
             'text' => 'LISTING',

@@ -45,6 +45,7 @@ class EquipmentsController extends Controller
                     'in_use' => 0,
                 ]
             );
+
         return redirect()
             ->route('listingEquipments')
             ->with('sucess', 'Equipament removed with successfully!');

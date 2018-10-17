@@ -10,6 +10,7 @@ class Sensor extends Model
         'name',
         'equipament_id',
         'user_id',
+        'in_use'
     ];
 
     public function equipament(){

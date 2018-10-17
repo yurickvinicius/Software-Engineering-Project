@@ -24,52 +24,12 @@
             {{ session('error') }}
         </p>
         @endif
-        <form action="{{ route('profileUpdate') }}" class="form-horizontal" method="post">
+        <form action="{{ route('storeUser') }}" class="form-horizontal" method="post">
             {!! csrf_field() !!}
-            <div class="form-group">
-                <label class="control-label col-sm-3" for="name">Name: </label>
-                <div class="col-sm-6">
-                    <input type="text" id="name" name="name" class="form-control" placeholder="name">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-3" for="login">Login: </label>
-                <div class="col-sm-6">
-                    <input type="text" id="login" name="login" class="form-control" placeholder="exemplo123">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-3" for="email">Email: </label>
-                <div class="col-sm-6">
-                    <input type="text" id="email" name="email" class="form-control" placeholder="exemplo@teste.com">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-3" for="password">Password: </label>
-                <div class="col-sm-6">
-                    <input type="text" id="password" name="password" class="form-control" placeholder="******">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-3" for="confirmPassword">Confirm Password:</label>
-                <div class="col-sm-6">
-                    <input type="text" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="******">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-3" for="type">Type:</label>
-                <div class="col-sm-6">
-                    <select class="form-control" name="type" id="type">
-                        <option value="0">Select type</option>
-                        <option value="1">Administrador</option>
-                        <option value="2">Comum</option>
-                    </select>
-                </div>
-            </div>
-            <div class="center-block">
-                <button type="submit" class="btn btn-success col-md-offset-4">Create user</button>
-                <button type="submit" class="btn btn-danger col-md-offset-1">Cancel</button>
-            </div>
+
+            @include('user.partials.form')
+
+
         </form>
     </div>
 </div>

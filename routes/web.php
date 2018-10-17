@@ -3,6 +3,8 @@ Route::get('/', function () {
     return view('introduction');
 })->name('index');
 
+Route::get('/read', 'ReadController@read')->name('read');
+
 $this->group(['middleware' => ['auth'], 'prefix' => 'home'], function(){
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/profile', 'UserController@profile')->name('profile');
@@ -12,11 +14,13 @@ $this->group(['middleware' => ['auth'], 'prefix' => 'home'], function(){
     Route::get('/deactivate', 'UserController@deactivateUser')->name('deactivateUser');
 
     Route::get('/createUser', 'UserController@createUser')->name('createUser');
+    Route::post('/storeUser', 'UserController@storeUser')->name('storeUser');
     Route::get('/listingUsers', 'UserController@userListing')->name('userListing');
-    Route::get('/deleteUser', 'UserController@deleteUser')->name('deleteUser');
+    // Route::get('/deleteUser', 'UserController@deleteUser')->name('deleteUser');
     Route::get('/showUser/{id}', 'UserController@showUser')->name('showUser');
     Route::get('/editUser/{id}', 'UserController@editUser')->name('editUser');
     Route::post('/updateUser', 'UserController@updateUser')->name('updateUser');
+    Route::get('/destroyUser/{id}', 'UserController@destroy')->name('userDestroy');
 
     Route::get('/createEquipments', 'EquipmentsController@createEquipments')->name('createEquipments');
     Route::post('/storeEquipment', 'EquipmentsController@storeEquipment')->name('storeEquipment');

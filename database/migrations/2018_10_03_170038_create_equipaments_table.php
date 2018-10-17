@@ -18,6 +18,7 @@ class CreateEquipamentsTable extends Migration
             $table->string('name');
             $table->string('local');
             $table->timestamps();
+            $table->char('in_use',1)->default(1);
 
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');

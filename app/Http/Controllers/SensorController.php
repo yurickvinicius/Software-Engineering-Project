@@ -38,13 +38,14 @@ class SensorController extends Controller
         return view('sensor.list', compact('sensors'));
     }
 
-    ublic function destroySensor(Request $request, $id){
+    public function destroySensor(Request $request, $id){
         $this->sensorModel->find($id)
             ->update(
                 [
                     'in_use' => 0,
                 ]
             );
+
         return redirect()
             ->route('listingSensors')
             ->with('sucess', 'Sensor removed with successfully!');
@@ -63,7 +64,6 @@ class SensorController extends Controller
     }
 
     public function updateSensor(Request $request) {
-        // dd($request);
         if($request->name == "" || $request->equipament_id == "") {
             return redirect()
             ->back()

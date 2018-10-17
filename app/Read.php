@@ -4,12 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Equipament extends Model
+class Read extends Model
 {
     protected $fillable = [
-        'name',
-        'local',
-        'user_id',
-        'in_use'
+        'value',
+        'equipament_id',
+        'sensor_id',
     ];
 }

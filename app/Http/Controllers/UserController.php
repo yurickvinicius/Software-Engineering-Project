@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers;
 use App\User;
+use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
@@ -89,12 +91,13 @@ class UserController extends Controller
     public function deactivateUser()
     {
         $user = auth()->user();
-        //$delete = $user->delete();
+
         $delete = $user->update(
                         [
                             'in_use' => 0,
                         ]
                     );
+
         if($delete)
             return redirect()
                     ->route('index');
@@ -111,15 +114,32 @@ class UserController extends Controller
     public function storeUser(UserRequest $request){
         $data = $request->all();
         $data['password'] = Hash::make($data['password']);
+
         $create = $this->userModel->create($data);
+
         if($create)
         return redirect()
                 ->route('userListing')
                 ->with('sucess', 'Create user successfully!');
+
         return redirect()
                 ->back()
                 ->with('error', 'Failed create user!');
+
     }
+
+    // public function saveUser(Requester $requester)
+    // {
+    //     $create = $this->userModel->create($requester->all());
+    //
+    //     if($create)
+    //     return redirect()
+    //             ->route('userListing')
+    //             ->with('sucess', 'Create user successfully!');
+    //     return redirect()
+    //             ->back()
+    //             ->with('error', 'Failed create user!');
+    // }
 
     public function userListing()
     {

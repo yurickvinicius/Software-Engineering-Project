@@ -12,9 +12,11 @@
 <div class="box">
     <div class="box-header">
         <legend>Equipments Listing</legend>
+        @if(auth()->user()->type == 1)
         <a href="{{ route('createEquipments') }}" class="btn btn-primary">New equipment
             <i class="fa fa-user-plus"></i>
         </a>
+        @endif
     </div>
     <div class="box-body">
         @if(session('sucess'))
@@ -30,7 +32,9 @@
 
         <table class="table table-bordered col-sm-10">
             <tr>
+                @if(auth()->user()->type == 1)
                 <th>Action</th>
+                @endif
                 <th style="width: 10px">#</th>
                 <th>Name</th>
                 <th>Local</th>
@@ -42,11 +46,13 @@
             @endif
             @foreach ($equipments as $equipment)
             <tr>
+                @if(auth()->user()->type == 1)
                 <td class="list-action">
                     <!-- <a href="{{ route('destroyEquipment', $equipment->id) }}" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></a> -->
                     <a href="{{ route('editEquipment', $equipment->id) }}" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a>
                     <a href="{{ route('showEquipment', $equipment->id) }}" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
                 </td>
+                @endif
                 <td>{{ $equipment->id }}</td>
                 <td>{{ $equipment->name }}</td>
                 <td>{{ $equipment->local }}</td>

@@ -17,6 +17,7 @@ class CreateSensorsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->timestamps();
+            $table->char('in_use',1)->default(1);
 
             $table->integer('equipament_id')->unsigned();
             $table->foreign('equipament_id')->references('id')->on('equipaments');
