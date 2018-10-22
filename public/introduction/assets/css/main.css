@@ -154,7 +154,7 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #fff;
+		/*color: #fff;*/
 		font-weight: 800;
 		letter-spacing: 0.225em;
 		line-height: 1em;
@@ -2058,7 +2058,7 @@ input, select, textarea {
 		}
 
 		.icon.style2 {
-			color: #00f0ff;
+			color: blue;
 		}
 
 		.icon.style3 {
@@ -2952,8 +2952,20 @@ input, select, textarea {
 			}
 
 		.wrapper.style2 {
-			background-color: #2e3842;
+			background-color: white;
 		}
+
+
+		.wrapper.style2 h3{
+			color: black;
+		}
+
+		h3:after, .wrapper.style2 h3:after {
+		    content: '';
+		    display: block;
+		    height: 1px;
+		}
+
 
 		.wrapper.style3 {
 			background-color: #ccffff;
@@ -2964,7 +2976,7 @@ input, select, textarea {
 				color: #ffffff;
 			}
 
-			.wrapper.style3 h2, .wrapper.style3 h3, .wrapper.style3 h4, .wrapper.style3 h5, .wrapper.style3 h6 {
+			.wrapper.style3 h3, .wrapper.style3 h4, .wrapper.style3 h5, .wrapper.style3 h6 {
 				color: #000066;
 			}
 
