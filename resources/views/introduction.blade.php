@@ -64,8 +64,7 @@
 
                         <strong>
                             <blockquote class="align-justify">
-
-                                The purpose of the exercise is to develop a web application, capable of receiving data from sensors and capturing them as well as generating them later through reports and graphs, in order to manipulate information in a productive way. The reading of the parameters by the sensors will be sent through an HTTP / GET request to the web address of the application where the application will receive the data and persist in a mysql database to be later managed.
+                                The purpose of the exercise is to develop a web application, capable of receiving data from sensors and capturing them as well as generating them later through reports and graphs, in order to manipulate information in a productive way. The reading of the parameters by the sensors will be sent through an HTTP / GET request to the web address of the application this will receive the data and persist in a mysql database to be later managed.
                             </blockquote>
                         </strong>
                     </p>
@@ -88,78 +87,18 @@
         </section>
         <!-- /One -->
 
+
         <!-- Two -->
-        <section id="two" class="wrapper alt style2">
-            <section class="spotlight">
-                <div class="image"><img src="{{ asset('/introduction/images/trello-banner.jpg') }}" alt="" class="banner-vh"/></div><div class="content">
-                    <h2>Trello</h2>
+            <section id="three" class="wrapper style2 special">
+                <h3><p>Graphical Representation of the System</p></h3>
 
-                    <p>
-                        <blockquote>
-                            Trello is an extremely versatile project management tool that can be adjusted according to your needs. You can use it to organize your work tasks and link it with Scrum methodologies easily very effectively.
-                        </blockquote>
-                    </p>
-                </div>
+                <div><img src="{{ asset('/introduction/images/comunication-grafic.jpg') }}" alt="" class="img-fluid" /></div>
             </section>
 
-            <section class="spotlight">
-                <div class="image"><img src="{{ asset('/introduction/images/laravel-banner.jpeg') }}" alt="" class="banner-vh" /></div>
-
-                <div class="content">
-                    <h2>Laravel</h2>
-                    <p>
-                        <blockquote>
-                            Laravel is a free and open source PHP development framework whose main goal is to enable you to work in a structured and fast way.
-                        </blockquote>
-                    </p>
-                </div>
-            </section>
-
-            <section class="spotlight">
-                <div class="image"><img src="{{ asset('/introduction/images/github-banner.png') }}" alt="" class="banner-vh" /></div>
-
-                <div class="content">
-                    <h2>Github</h2>
-                    <p>
-                        <blockquote>
-                            GitHub is a source code hosting platform with version control that uses Git. It allows programmers, utilities, or any user on the platform to contribute to private and / or Open Source projects from anywhere in the world.
-                        </blockquote>
-                    </p>
-                </div>
-            </section>
-
-            <section class="spotlight">
-                <div class="image"><img src="{{ asset('/introduction/images/html-banner.png') }}" alt="" class="banner-vh"  /></div>
-
-                <div class="content">
-                    <h2>Html, Css, Js</h2>
-                    <p>
-                        <blockquote>
-                            Html, Css, and Javascript are front end languages ​​used to build the visual structure of the application. The Html, marks the elements of the page, while the CSS makes the stylization of the elements. In turn the javascript of life and movement the pages making them more dynamic.
-                        </blockquote>
-                    </p>
-                </div>
-            </section>
-
-            <section class="spotlight">
-                <div class="image"><img src="{{ asset('/introduction/images/postgresql-banner.jpg') }}" alt="" class="banner-vh"  /></div>
-
-                <div class="content">
-                    <h2>Php e PostgreSQL</h2>
-                    <p>
-                        <blockquote>
-                            PostgreSQL is a relational database management system. It can handle workloads ranging from small to large Internet-facing applications with many concurrent users. The PHP language is a programming language and its field of action is web development. Its main goal is to implement fast, simple and efficient web solutions.
-                        </blockquote>
-                    </p>
-                </div>
-            </section>
-
-        </section>
-        <!-- /Two -->
 
 
 
-        <!-- Three -->
+        <!-- Three ->
         <section id="three" class="wrapper style3 ">
 
             <ul class="features">
