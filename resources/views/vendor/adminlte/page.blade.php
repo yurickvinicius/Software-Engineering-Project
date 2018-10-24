@@ -63,11 +63,9 @@
                             </a>
                         </li>
                         <li>
-
-                                <a href="{{ url('logout') }}">
-                                    <i class="fa fa-fw fa-power-off"></i> {{ trans('adminlte::adminlte.log_out') }}
-                                </a>
-
+                            <a href="{{ url('logout') }}">
+                                <i class="fa fa-fw fa-power-off"></i> {{ trans('adminlte::adminlte.log_out') }}
+                            </a>
                         </li>
                     </ul>
                 </div>

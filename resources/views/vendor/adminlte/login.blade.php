@@ -53,7 +53,7 @@
                 </div>
                 <div class="button">
                     <button type="submit" class="btn btn-primary btn-block btn-flat">{{ trans('adminlte::adminlte.sign_in') }}</button>
-                    <a href="{{ url(config('adminlte.register', 'register')) }}" class="btn btn-primary btn-block btn-flat">{{ trans('adminlte::adminlte.register') }}</a>
+                    <!--<a href="{{ url(config('adminlte.register', 'register')) }}" class="btn btn-primary btn-block btn-flat">{{ trans('adminlte::adminlte.register') }}</a>-->
                 </div>
             </form>
         </div>

@@ -28,7 +28,7 @@
                         <a href="#menu" class="menuToggle"><span>Menu</span></a>
                         <div id="menu">
                             <ul>=
-                                <li><a href="{{ url(config('adminlte.register', 'register')) }}">Sign Up</a></li>
+                                <!--<li><a href="{{ url(config('adminlte.register', 'register')) }}">Sign Up</a></li>-->
                                 <li><a href="{{ url(config('adminlte.login', 'login')) }}">Log In</a></li>
                             </ul>
                         </div>
