@@ -5,6 +5,10 @@ Route::get('/', function () {
 
 Route::get('/read', 'ReadController@read')->name('read');
 
+Route::get('/login', 'LoginController@index')->name('index');
+Route::post('/login', 'LoginController@login')->name('login');
+Route::get('/logout', 'LoginController@getLogout')->name('logout');
+
 $this->group(['middleware' => ['auth'], 'prefix' => 'home'], function(){
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/profile', 'UserController@profile')->name('profile');
@@ -39,4 +43,4 @@ $this->group(['middleware' => ['auth'], 'prefix' => 'home'], function(){
     Route::post('/updateSensor', 'SensorController@updateSensor')->name('updateSensor');
 });
 
-Auth::routes();
+///Auth::routes();
