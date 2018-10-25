@@ -57,7 +57,7 @@
                     @endif
                     <td>{{ $sensor->id }}</td>
                     <td>{{ $sensor->name }}</td>
-                    <td>{{ $sensor->equipament->name }}</td>
+                    <td>{{ $sensor->equipament }}</td>
                 </tr>
             @endforeach
         </table>

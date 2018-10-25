@@ -34,6 +34,7 @@ class SensorController extends Controller
     public function listingSensors() {
         $sensors = $this->sensorModel
             ->where('sensors.in_use','<>',0)
+            ->select('equipaments.name as equipament', 'sensors.*')
             ->join('equipaments', 'sensors.equipament_id', '=', 'equipaments.id')
             ->where('equipaments.in_use','<>',0)
             ->orderBy('sensors.id', 'desc')
