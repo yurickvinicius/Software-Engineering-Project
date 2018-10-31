@@ -57,7 +57,7 @@ function viewSensor(cod){
         data: {id:cod},
         success: function (data) {
           ///alert(data.name);
-          console.log(data)
+          ///console.log(data)
           
             $('#sensorName').html(data.sensor.name);
             $('#sensorCreated').html(data.sensor.created_at);
