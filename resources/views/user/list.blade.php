@@ -46,8 +46,15 @@
                 @if(auth()->user()->type == 1)
                 <td class="list-action">
                     <a href="{{ route('userDestroy', $user->id) }}" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></a>
-                    <a href="{{ route('editUser', $user->id) }}" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a>
-                    <a href="{{ route('showUser', $user->id) }}" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
+                    <a href="{{ route('editUser', $user->id) }}" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a>                    
+                    <button data-toggle="modal" data-target="#userModal" onclick="viewUser('{{ $user->id }}')" type="button" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></button>
+
+
+                    <!-- Large modal -->
+                    <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".mdUser">Large modal</button>-->
+
+
+                    
                     <!-- <a href="{{ route('userDestroy', ['id'=>$user->id]) }}" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></a>
                     <a href="" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a>
                     <a href="" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a> -->
@@ -64,6 +71,51 @@
                 @endif
             </tr>
             @endforeach
+
+            <!------------------- MODAL ------------------->            
+      
+      <!-- Modal -->
+      <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">User Data</h4>
+            </div>
+            <div class="modal-body">              
+
+                            <div class="form-group">
+                                <label>Nome: </label> 
+                                <span id="userName"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Login: </label> 
+                                <span id="userLogin"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Email: </label> 
+                                <span id="userEmail"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Created: </label> 
+                                <span id="userCreated"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Type: </label> 
+                                <span id="userType"></span>
+                            </div>                 
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>   
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+            <!------------------------------------->
+
         </table>
     </div>
     {!! $users->links() !!}

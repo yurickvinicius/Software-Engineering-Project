@@ -130,19 +130,6 @@ class UserController extends Controller
 
     }
 
-    // public function saveUser(Requester $requester)
-    // {
-    //     $create = $this->userModel->create($requester->all());
-    //
-    //     if($create)
-    //     return redirect()
-    //             ->route('userListing')
-    //             ->with('sucess', 'Create user successfully!');
-    //     return redirect()
-    //             ->back()
-    //             ->with('error', 'Failed create user!');
-    // }
-
     public function userListing()
     {
         $users = $this->userModel
@@ -152,9 +139,16 @@ class UserController extends Controller
         return view('user.list', compact('users'));
     }
 
+    /*
     public function showUser(Request $request) {
         $user = $this->userModel->find($request->id);
         return view('user.show', compact('user'));
+    }
+    */
+
+    public function showUser(Request $request) {
+        $user = $this->userModel->find($request->id);
+        return json_encode($user);  
     }
 
     public function editUser(Request $request) {
