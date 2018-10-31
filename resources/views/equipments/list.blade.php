@@ -50,7 +50,7 @@
                 <td class="list-action">
                     <a href="{{ route('destroyEquipment', $equipment->id) }}" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></a>
                     <a href="{{ route('editEquipment', $equipment->id) }}" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a>
-                    <a href="{{ route('showEquipment', $equipment->id) }}" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
+                    <button data-toggle="modal" data-target="#equipModal" onclick="viewEquip('{{ $equipment->id }}')" type="button" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></button>
                 </td>
                 @endif
                 <td>{{ $equipment->id }}</td>
@@ -58,6 +58,37 @@
                 <td>{{ $equipment->local }}</td>
             </tr>
             @endforeach
+
+            <!------------------- MODAL ------------------->            
+      
+            <div class="modal fade" id="equipModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">User Data</h4>
+                        </div>
+                        <div class="modal-body">              
+    
+                                <div class="form-group">
+                                    <label>Nome: </label> 
+                                    <span id="equipName"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label>Local: </label> 
+                                    <span id="equipLocal"></span>
+                                </div>                 
+    
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>   
+                        </div>
+                    </div>
+                    </div>
+                </div>
+        
+                <!------------------------------------->
+
         </table>
     </div>
     <!-- {!! $equipments->links() !!} -->

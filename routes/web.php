@@ -20,8 +20,6 @@ $this->group(['middleware' => ['auth'], 'prefix' => 'home'], function(){
     Route::get('/createUser', 'UserController@createUser')->name('createUser');
     Route::post('/storeUser', 'UserController@storeUser')->name('storeUser');
     Route::get('/listingUsers', 'UserController@userListing')->name('userListing');    
-    ///Route::get('/showUser/{id}', 'UserController@showUser')->name('showUser');
-
     Route::get('/showUser', 'UserController@showUser')->name('showUser');
 
     Route::get('/editUser/{id}', 'UserController@editUser')->name('editUser');
@@ -31,8 +29,9 @@ $this->group(['middleware' => ['auth'], 'prefix' => 'home'], function(){
     Route::get('/createEquipments', 'EquipmentsController@createEquipments')->name('createEquipments');
     Route::post('/storeEquipment', 'EquipmentsController@storeEquipment')->name('storeEquipment');
     Route::get('/listingEquipments', 'EquipmentsController@listingEquipments')->name('listingEquipments');
-    Route::get('/destroyEquipment/{id}', 'EquipmentsController@destroyEquipments')->name('destroyEquipment');
-    Route::get('/showEquipment/{id}', 'EquipmentsController@showEquipments')->name('showEquipment');
+    Route::get('/destroyEquipment/{id}', 'EquipmentsController@destroyEquipments')->name('destroyEquipment');    
+    Route::get('/showEquipment', 'EquipmentsController@showEquipments')->name('showEquipment');
+
     Route::get('/editEquipment/{id}', 'EquipmentsController@editEquipment')->name('editEquipment');
     Route::post('/updateEquipment', 'EquipmentsController@updateEquipment')->name('updateEquipment');
 

@@ -29,3 +29,39 @@ function viewUser(cod){
     });
 
 }
+
+function viewEquip(cod){
+
+    $.ajax({
+        url: url + '/home/showEquipment',
+        dataType: "json",
+        cache: false,
+        data: {id:cod},
+        success: function (data) {
+          ///alert(data.name);
+          console.log(data)
+          
+            $('#equipName').html(data.name);
+            $('#equipLocal').html(data.local);
+        },
+    });
+
+}
+
+function viewSensor(cod){
+
+    $.ajax({
+        url: url + '/home/showSensor',
+        dataType: "json",
+        cache: false,
+        data: {id:cod},
+        success: function (data) {
+          ///alert(data.name);
+          console.log(data)
+          
+            $('#equipName').html(data.name);
+            $('#equipLocal').html(data.local);
+        },
+    });
+
+}

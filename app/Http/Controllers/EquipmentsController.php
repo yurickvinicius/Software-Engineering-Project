@@ -34,10 +34,16 @@ class EquipmentsController extends Controller
             ->paginate(10);
         return view('equipments.list', compact('equipments'));
     }
-
+    /*
     public function showEquipments(Request $request) {
         $equipment = $this->equipmentModel->find($request->id);
         return view('equipments.show', compact('equipment'));
+    }
+    */
+
+    public function showEquipments(Request $request) {
+        $equipment = $this->equipmentModel->find($request->id);
+        return json_encode($equipment);
     }
 
     public function destroyEquipments(Request $request, $id){

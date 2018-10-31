@@ -48,16 +48,6 @@
                     <a href="{{ route('userDestroy', $user->id) }}" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></a>
                     <a href="{{ route('editUser', $user->id) }}" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a>                    
                     <button data-toggle="modal" data-target="#userModal" onclick="viewUser('{{ $user->id }}')" type="button" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></button>
-
-
-                    <!-- Large modal -->
-                    <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".mdUser">Large modal</button>-->
-
-
-                    
-                    <!-- <a href="{{ route('userDestroy', ['id'=>$user->id]) }}" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></a>
-                    <a href="" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a>
-                    <a href="" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a> -->
                 </td>
                 @endif
                 <td>{{ $user->id }}</td>
