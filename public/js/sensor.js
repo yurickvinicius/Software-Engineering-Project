@@ -39,7 +39,7 @@ function viewEquip(cod){
         data: {id:cod},
         success: function (data) {
           ///alert(data.name);
-          console.log(data)
+          ///console.log(data)
           
             $('#equipName').html(data.name);
             $('#equipLocal').html(data.local);
@@ -59,8 +59,9 @@ function viewSensor(cod){
           ///alert(data.name);
           console.log(data)
           
-            $('#equipName').html(data.name);
-            $('#equipLocal').html(data.local);
+            $('#sensorName').html(data.sensor.name);
+            $('#sensorCreated').html(data.sensor.created_at);
+            $('#EquipamentName').html(data.equipment.name);
         },
     });
 

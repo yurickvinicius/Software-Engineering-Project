@@ -39,7 +39,10 @@ $this->group(['middleware' => ['auth'], 'prefix' => 'home'], function(){
     Route::post('/storeSensor', 'SensorController@storeSensor')->name('storeSensor');
     Route::get('/listingSensors', 'SensorController@listingSensors')->name('listingSensors');
     Route::get('/destroySensor/{id}', 'SensorController@destroySensor')->name('destroySensor');
-    Route::get('/showSensor/{id}', 'SensorController@showSensor')->name('showSensor');
+    ///Route::get('/showSensor/{id}', 'SensorController@showSensor')->name('showSensor');
+
+    Route::get('/showSensor', 'SensorController@showSensor')->name('showSensor');
+
     Route::get('/editSensor/{id}', 'SensorController@editSensor')->name('editSensor');
     Route::post('/updateSensor', 'SensorController@updateSensor')->name('updateSensor');
 });
