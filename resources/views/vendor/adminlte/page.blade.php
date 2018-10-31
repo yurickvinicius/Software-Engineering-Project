@@ -127,6 +127,7 @@
     @yield('js')
 
     <script src="{{ asset('js/sensor.js') }}"></script>
+    <script src="{{ asset('js/chart.js') }}"></script> 
 
 
 @stop
