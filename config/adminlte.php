@@ -139,6 +139,7 @@ return [
                     'text' => 'Users',
                     'url'  => 'home/listingUsers',
                     'icon'  => 'file',
+                    'can' => 'user-admin',
                 ],
                 [
                     'text' => 'Equipments',
@@ -151,6 +152,11 @@ return [
                     'icon'  => 'file',
                 ],
             ],
+        ],
+        [
+            'text'        => 'READING REPORT',
+            'url'         => 'home/readingReport',
+            'icon'        => 'file',
         ],
         [
             'text' => 'ACCOUNT SETTINGS',

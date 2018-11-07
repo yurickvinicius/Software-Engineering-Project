@@ -12,11 +12,6 @@
 <div class="box">
     <div class="box-header">
         <legend>Equipments Listing</legend>
-        @if(auth()->user()->type == 1)
-        <a href="{{ route('createEquipments') }}" class="btn btn-primary">New equipment
-            <i class="fa fa-user-plus"></i>
-        </a>
-        @endif
     </div>
     <div class="box-body">
         @if(session('sucess'))
@@ -59,8 +54,8 @@
             </tr>
             @endforeach
 
-            <!------------------- MODAL ------------------->            
-      
+            <!------------------- MODAL ------------------->
+
             <div class="modal fade" id="equipModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -68,25 +63,25 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="myModalLabel">Equipament Data</h4>
                         </div>
-                        <div class="modal-body">              
-    
+                        <div class="modal-body">
+
                                 <div class="form-group">
-                                    <label>Nome: </label> 
+                                    <label>Nome: </label>
                                     <span id="equipName"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label>Local: </label> 
+                                    <label>Local: </label>
                                     <span id="equipLocal"></span>
-                                </div>                 
-    
+                                </div>
+
                         </div>
                         <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>   
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                     </div>
                 </div>
-        
+
                 <!------------------------------------->
 
         </table>
