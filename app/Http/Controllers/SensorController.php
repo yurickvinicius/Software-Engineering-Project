@@ -9,7 +9,6 @@ use App\Http\Requests\SensorRequest;
 
 class SensorController extends Controller
 {
-
     private $equipamentModel;
     private $sensorModel;
 
@@ -41,6 +40,7 @@ class SensorController extends Controller
             ->paginate(10);
 
         return view('sensor.list', compact('sensors'));
+
     }
 
     public function destroySensor(Request $request, $id){

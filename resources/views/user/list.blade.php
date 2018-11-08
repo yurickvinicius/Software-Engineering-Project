@@ -12,11 +12,6 @@
 <div class="box">
     <div class="box-header">
         <legend>User Listing</legend>
-        @if(auth()->user()->type == 1)
-        <a href="{{ route('createUser') }}" class="btn btn-primary">New user
-            <i class="fa fa-user-plus"></i>
-        </a>
-        @endif
     </div>
     <div class="box-body">
         @if(session('sucess'))
@@ -46,7 +41,7 @@
                 @if(auth()->user()->type == 1)
                 <td class="list-action">
                     <a href="{{ route('userDestroy', $user->id) }}" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></a>
-                    <a href="{{ route('editUser', $user->id) }}" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a>                    
+                    <a href="{{ route('editUser', $user->id) }}" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a>
                     <button data-toggle="modal" data-target="#userModal" onclick="viewUser('{{ $user->id }}')" type="button" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></button>
                 </td>
                 @endif
@@ -62,8 +57,8 @@
             </tr>
             @endforeach
 
-            <!------------------- MODAL ------------------->            
-      
+            <!------------------- MODAL ------------------->
+
       <!-- Modal -->
       <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
@@ -72,32 +67,32 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <h4 class="modal-title" id="myModalLabel">User Data</h4>
             </div>
-            <div class="modal-body">              
+            <div class="modal-body">
 
                             <div class="form-group">
-                                <label>Nome: </label> 
+                                <label>Nome: </label>
                                 <span id="userName"></span>
                             </div>
                             <div class="form-group">
-                                <label>Login: </label> 
+                                <label>Login: </label>
                                 <span id="userLogin"></span>
                             </div>
                             <div class="form-group">
-                                <label>Email: </label> 
+                                <label>Email: </label>
                                 <span id="userEmail"></span>
                             </div>
                             <div class="form-group">
-                                <label>Created: </label> 
+                                <label>Created: </label>
                                 <span id="userCreated"></span>
                             </div>
                             <div class="form-group">
-                                <label>Type: </label> 
+                                <label>Type: </label>
                                 <span id="userType"></span>
-                            </div>                 
+                            </div>
 
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>   
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>

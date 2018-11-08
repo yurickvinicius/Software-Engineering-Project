@@ -12,11 +12,6 @@
 <div class="box">
     <div class="box-header">
         <legend>Sensor Listing</legend>
-        @if(auth()->user()->type == 1)
-        <a href="{{ route('createSensor') }}" class="btn btn-primary">New sensor
-            <i class="fa fa-user-plus"></i>
-        </a>
-        @endif
     </div>
     <div class="box-body">
         @if(session('sucess'))
@@ -51,7 +46,7 @@
                     @if(auth()->user()->type == 1)
                     <td class="list-action">
                         <a href="{{ route('destroySensor', ['id'=>$sensor->id]) }}" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></a>
-                        <a href="{{ route('editSensor', $sensor->id)}}" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a>                        
+                        <a href="{{ route('editSensor', $sensor->id)}}" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a>
                         <button data-toggle="modal" data-target="#sensorModal" onclick="viewSensor('{{ $sensor->id }}')" type="button" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></button>
                     </td>
                     @endif
@@ -62,8 +57,8 @@
             @endforeach
 
 
-            <!------------------- MODAL ------------------->            
-      
+            <!------------------- MODAL ------------------->
+
             <div class="modal fade" id="sensorModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -71,29 +66,29 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">Sensor Data</h4>
                     </div>
-                    <div class="modal-body">              
+                    <div class="modal-body">
 
                         <div class="form-group">
-                            <label>Nome: </label> 
+                            <label>Nome: </label>
                             <span id="sensorName"></span>
                         </div>
                         <div class="form-group">
-                            <label>Created: </label> 
+                            <label>Created: </label>
                             <span id="sensorCreated"></span>
                         </div>
                         <div class="form-group">
-                            <label>Equipament: </label> 
+                            <label>Equipament: </label>
                             <span id="EquipamentName"></span>
-                        </div>                  
+                        </div>
 
                     </div>
                     <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>   
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
                 </div>
             </div>
-    
+
             <!------------------------------------->
 
         </table>
