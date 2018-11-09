@@ -23,7 +23,7 @@
                 <div class="form-group">
                     <label class="control-label col-sm-3 selectpicker" for="equipament">Equipament: </label>
                     <div class="col-sm-7">
-                        <select class="form-control" name="equipaments[]" id="equipment" multiple data-live-search="true">
+                        <select class="form-control" name="equipament" id="equipament">
                             @foreach($equipaments as $equipament)
                             <option value="{{ $equipament->id }}">{{ $equipament->name }}</option>
                             @endforeach
@@ -31,26 +31,16 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-sm-3" for="sensor">Sensor: </label>
-                    <div class="col-sm-7">
-                        <select class="form-control" name="sensor_id" id="sensor" multiple>
-                            @foreach($sensors as $sensor)
-                            <option value="{{ $sensor->id }}">{{ $sensor->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
                     <div>
-                        <label class="control-label col-sm-3" for="data">Data Início:</label>
+                        <label class="control-label col-sm-3" for="dataInit">Data Início:</label>
                         <div class="col-sm-2">
-                            <input type="date" id="dataMinimo" name="dataMinimo" class="form-control campo-metade" placeholder="Mínimo">
+                            <input type="date" id="dataInit" name="dataInit" class="form-control campo-metade" placeholder="Mínimo">
                         </div>
                     </div>
                     <div>
-                        <label class="control-label col-sm-3" for="data">Data Fim:</label>
+                        <label class="control-label col-sm-3" for="dataFin">Data Fim:</label>
                         <div class="col-sm-2">
-                            <input type="date" id="dataMaximo" name="dataMaximo" class="form-control campo-metade" placeholder="Máximo">
+                            <input type="date" id="dataFin" name="dataFin" class="form-control campo-metade" placeholder="Máximo">
                         </div>
                     </div>
                 </div>
@@ -68,7 +58,7 @@
             <table class="table table-condensed table-bordered table-striped">
                 <thead>
                     <tr class="active">
-                        <th>Equipament</th>
+                        <!-- <th>Equipament</th> -->
                         <th>Sensor</th>
                         <th>Value</th>
                         <th>Date reader</th>
@@ -83,10 +73,10 @@
 
                 @foreach($reads as $read)
                     <tr>
-                        <td>{{ $read->name}}</td>
-                        <td>{{ $read->sensor_id }}</td>
+                        <!-- <td>{{ $read->equipament}}</td> -->
+                        <td>{{ $read->sensor }}</td>
                         <td>{{ $read->value }}</td>
-                        <td>{{ date('d/m/Y', strtotime($sensor->created_at)) }}</td>
+                        <td>{{ $read->created_at }}</td>
                     </tr>
                 @endforeach
             </table>
@@ -105,6 +95,16 @@
 
 .div-table {
     margin-top: 30px;
+}
+
+td {
+    width: 35px;
+    text-align: center;
+}
+
+th {
+    width: 35px;
+    text-align: center;
 }
 </style>
 @stop
