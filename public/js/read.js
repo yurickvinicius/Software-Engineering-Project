@@ -17,15 +17,27 @@ $(document).ready(function(){
                     ///console.log(sensors)
                                         
                     for(var i=0; i < sensors.length; i++){
-                        $('#resultListSensors').append('\
+                        $('#resultListSensors1').append('\
                             <div class="checkbox">\
                                 <label>\
                                     <input type="checkbox" name="sensors['+i+']" \
                                     value="'+sensors[i].id+'">\
-                                    '+sensors[i].name+'\
+                                    '+sensors[i].name.substring(40, 0)+'\
                                 </label>\
                             </div>\
                         ')
+
+                        i++;
+
+                        $('#resultListSensors2').append('\
+                        <div class="checkbox">\
+                            <label>\
+                                <input type="checkbox" name="sensors['+i+']" \
+                                value="'+sensors[i].id+'">\
+                                '+sensors[i].name.substring(40, 0)+'\
+                            </label>\
+                        </div>\
+                    ')
                     }
                 },
             });

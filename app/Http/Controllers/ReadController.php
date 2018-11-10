@@ -23,6 +23,7 @@ class ReadController extends Controller
         $sensors = $this->sensorModel
             ->where('in_use','<>','0')
             ->where('equipament_id','=',$request->id)
+            ->orderBy('id', 'desc')
             ->get();
         
         return json_encode($sensors);        
@@ -75,9 +76,6 @@ class ReadController extends Controller
     }
 
     public function reading(Request $request) {
-
-        ///dd($request->all());
-
         $dataInit = $request->dataInit . " 00:00:00";
         $dataFin = $request->dataFin . " 23:59:59";
         
