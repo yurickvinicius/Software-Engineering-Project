@@ -55,13 +55,6 @@ class SensorController extends Controller
             ->route('listingSensors')
             ->with('sucess', 'Sensor removed with successfully!');
     }
-    /*
-    public function showSensor(Request $request) {
-        $sensor = $this->sensorModel->find($request->id);
-        $equipment = $this->equipamentModel->find($sensor->equipament_id);
-        return view('sensor.show', compact('sensor', 'equipment'));
-    }
-    */
 
     public function showSensor(Request $request) {
         $sensor = $this->sensorModel->find($request->id);

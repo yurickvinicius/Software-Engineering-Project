@@ -19,6 +19,15 @@ class ReadController extends Controller
         $this->readModel = $read;
     }
 
+    public function listSensors(Request $request){
+        $sensors = $this->sensorModel
+            ->where('in_use','<>','0')
+            ->where('equipament_id','=',$request->id)
+            ->get();
+        
+        return json_encode($sensors);        
+    }
+
     public function read(Request $request){
         $data = $request->all();
         $total = count($data);
@@ -66,9 +75,12 @@ class ReadController extends Controller
     }
 
     public function reading(Request $request) {
+
+        dd($request->all());
+
         $dataInit = $request->dataInit . " 00:00:00";
         $dataFin = $request->dataFin . " 23:59:59";
-
+        
         $equipaments = $this->equipmentModel
         ->where('equipaments.in_use','<>',0)
         ->get();

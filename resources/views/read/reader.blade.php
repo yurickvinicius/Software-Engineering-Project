@@ -21,15 +21,26 @@
                 {!! csrf_field() !!}
 
                 <div class="form-group">
-                    <label class="control-label col-sm-3 selectpicker" for="equipament">Equipament: </label>
+                    <label class="control-label col-sm-3 selectpicker" for="selEquipament">Equipament: </label>
                     <div class="col-sm-7">
-                        <select class="form-control" name="equipament" id="equipament">
+                        <select class="form-control" name="selEquipament" id="selEquipament">
+                            <option value="0">Select a equipament</option>
                             @foreach($equipaments as $equipament)
-                            <option value="{{ $equipament->id }}">{{ $equipament->name }}</option>
+                                <option value="{{ $equipament->id }}">{{ $equipament->name }}</option>
                             @endforeach
                         </select>
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-3 selectpicker" for="equipament">Sensor: </label>
+                    <div class="col-sm-7">
+                        <button data-toggle="modal" data-target="#listSensorsModal" type="button" class="btn btn-default btn-sm"><i class="fa fa-list"></i> Click for list the sensors</button>
+                    </div>
+                </div>
+
+                @include('read.modal.list_sensors')
+
                 <div class="form-group">
                     <div>
                         <label class="control-label col-sm-3" for="dataInit">Data Início:</label>
@@ -107,4 +118,8 @@ th {
     text-align: center;
 }
 </style>
+@stop
+
+@section('adminlte_js')    
+    <script src="{{ asset('js/read.js') }}"></script>
 @stop

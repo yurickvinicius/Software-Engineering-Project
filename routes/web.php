@@ -38,9 +38,7 @@ $this->group(['middleware' => ['auth'], 'prefix' => 'home'], function(){
     Route::get('/createSensor', 'SensorController@createSensor')->name('createSensor');
     Route::post('/storeSensor', 'SensorController@storeSensor')->name('storeSensor');
     Route::get('/listingSensors', 'SensorController@listingSensors')->name('listingSensors');
-    Route::get('/destroySensor/{id}', 'SensorController@destroySensor')->name('destroySensor');
-    ///Route::get('/showSensor/{id}', 'SensorController@showSensor')->name('showSensor');
-
+    Route::get('/destroySensor/{id}', 'SensorController@destroySensor')->name('destroySensor');        
     Route::get('/showSensor', 'SensorController@showSensor')->name('showSensor');
 
     Route::get('/editSensor/{id}', 'SensorController@editSensor')->name('editSensor');
@@ -48,6 +46,7 @@ $this->group(['middleware' => ['auth'], 'prefix' => 'home'], function(){
 
     Route::get('/readingReport', 'ReadController@readingReport')->name('readingReport');
     Route::post('/readingReport', 'ReadController@reading')->name('reading');
+    Route::get('/read/list/sensors', 'ReadController@listSensors')->name('readListSensors');    
 });
 
 ///Auth::routes();
