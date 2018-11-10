@@ -36,6 +36,7 @@
                     <label class="control-label col-sm-3 selectpicker" for="equipament">Sensor: </label>
                     <div class="col-sm-7">
                         <button data-toggle="modal" data-target="#listSensorsModal" type="button" class="btn btn-default btn-sm"><i class="fa fa-list"></i> Click for list the sensors</button>
+                        <span id="sQtdSensorsSel"></span>
                     </div>
                 </div>
 
