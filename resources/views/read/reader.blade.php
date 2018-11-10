@@ -23,7 +23,7 @@
                 <div class="form-group">
                     <label class="control-label col-sm-3 selectpicker" for="selEquipament">Equipament: </label>
                     <div class="col-sm-7">
-                        <select class="form-control" name="selEquipament" id="selEquipament">
+                        <select class="form-control" name="equipament" id="selEquipament">
                             <option value="0">Select a equipament</option>
                             @foreach($equipaments as $equipament)
                                 <option value="{{ $equipament->id }}">{{ $equipament->name }}</option>
@@ -118,8 +118,4 @@ th {
     text-align: center;
 }
 </style>
-@stop
-
-@section('adminlte_js')    
-    <script src="{{ asset('js/read.js') }}"></script>
 @stop

@@ -127,6 +127,7 @@
     @yield('js')
 
     <script src="{{ asset('js/sensor.js') }}"></script>
+    <script src="{{ asset('js/read.js') }}"></script>
    
     <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
 
