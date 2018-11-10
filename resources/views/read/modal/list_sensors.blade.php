@@ -15,7 +15,7 @@
                     </div>
                     
                     <div style="margin-left: 87%;">
-                        <button style="margin-bottom:10px" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button style="margin-bottom:10px" type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
                 </div>
