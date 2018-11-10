@@ -76,7 +76,7 @@ class ReadController extends Controller
 
     public function reading(Request $request) {
 
-        dd($request->all());
+        ///dd($request->all());
 
         $dataInit = $request->dataInit . " 00:00:00";
         $dataFin = $request->dataFin . " 23:59:59";
