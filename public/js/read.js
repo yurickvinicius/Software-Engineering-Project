@@ -1,11 +1,11 @@
 var url = 'http://'+$(location).attr('host');
 
 $(document).ready(function(){
-  
+
     $('#selEquipament').change(function(){
-        var cod = $(this).val(); 
-        $('#resultListSensors1').html("");               
-        $('#resultListSensors2').html(""); 
+        var cod = $(this).val();
+        $('#resultListSensors1').html("");
+        $('#resultListSensors2').html("");
         $('#sQtdSensorsSel').html('');
 
         if(cod != 0){
@@ -17,7 +17,7 @@ $(document).ready(function(){
                 success: function (sensors) {
                     ///alert(user.name);
                     ///console.log(sensors)
-                           
+
                     var tam = sensors.length;
                     for(var i=0; i < tam; i++){
                         $('#resultListSensors1').append('\
@@ -42,14 +42,14 @@ $(document).ready(function(){
                         </div>\
                         ')
                     }
-                    
+
                     $('#sQtdSensorsSel').html('<span class="green_one"> '+tam+' selected</span>')
-                    
+
 
                 },
             });
         }
-        
+
     })
 
 })
@@ -65,18 +65,18 @@ function qtdCheckBoxChecked(){
     $("input[type=checkbox]").each(function () {
         tam++;
     })
-    
+
     $('#sQtdSensorsSel').html('<span class="green_one"> '+cont+' selected of the '+tam+' sensors.</span>')
 }
 
-function clearAllCheckbox(){    
+function clearAllCheckbox(){
     $("input[type=checkbox]").each(function () {
         $(this).attr('checked', false);
     })
     qtdCheckBoxChecked()
 }
 
-function checkAllCheckbox(){    
+function checkAllCheckbox(){
     $("input[type=checkbox]").each(function () {
         $(this).attr('checked', true);
     })
