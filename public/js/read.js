@@ -2,6 +2,8 @@ var url = 'http://'+$(location).attr('host');
 
 $(document).ready(function(){
 
+    
+/* ############################## */
     $('#selEquipament').change(function(){
         var cod = $(this).val();
         $('#resultListSensors1').html("");

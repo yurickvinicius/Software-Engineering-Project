@@ -76,7 +76,10 @@ class ReadController extends Controller
     }
 
     public function reading(Request $request) {
-        dd($request);
+        ///dd($request->all());
+        $request->sensors = array_values($request->sensors);
+        dd($request->sensors); //// Array que contem os sensores no formato key=>id
+
         $dataInit = $request->dataInit . " 00:00:00";
         $dataFin = $request->dataFin . " 23:59:59";
 
