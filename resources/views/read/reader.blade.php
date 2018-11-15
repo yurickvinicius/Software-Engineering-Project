@@ -93,7 +93,6 @@
                 @endforeach
             </table>
         </div>
-        {!! $reads->links() !!}
     </div>
 </div>
 @stop

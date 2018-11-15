@@ -9,7 +9,9 @@
                     </div>
                     <div class="modal-body">
                         <div class="col-md-12" style="margin-bottom:2%">
-                            <div class="col-md-6" id="resultListSensors1"></div>
+                            <div class="col-md-6" id="resultListSensors1">
+                                <h3>Please, select a equipament!</h3>
+                            </div>
                             <div class="col-md-6" id="resultListSensors2"></div>
                         </div>
                     </div>

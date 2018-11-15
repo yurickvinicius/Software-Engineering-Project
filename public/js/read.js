@@ -48,6 +48,8 @@ $(document).ready(function(){
 
                 },
             });
+        }else{
+            $('#resultListSensors1').html("<h3>Please, select a equipament!</h3>")            
         }
 
     })
@@ -69,16 +71,19 @@ function qtdCheckBoxChecked(){
     $('#sQtdSensorsSel').html('<span class="green_one"> '+cont+' selected of the '+tam+' sensors.</span>')
 }
 
-function clearAllCheckbox(){
+function clearAllCheckbox() {
+
     $("input[type=checkbox]").each(function () {
-        $(this).attr('checked', false);
-    })
+        if (this.checked) 
+            this.checked = false;
+    });
     qtdCheckBoxChecked()
 }
 
 function checkAllCheckbox(){
     $("input[type=checkbox]").each(function () {
-        $(this).attr('checked', true);
+        if (this.checked == false) 
+        this.checked = true;
     })
     qtdCheckBoxChecked()
 }
