@@ -107,29 +107,29 @@ return [
     |
     */
     'menu' => [
-        [
-            'text' => 'REGISTER',
-            'url'  => 'home/register',
-            'icon' => 'plus',
-            'submenu' => [
-                [
-                    'text' => 'Users',
-                    'url'  => 'home/createUser',
-                    'icon'  => 'user-plus',
-                ],
-                [
-                    'text' => 'Equipments',
-                    'url'  => 'home/createEquipments',
-                    'icon'  => 'plus',
-                ],
-                [
-                    'text' => 'Sensors',
-                    'url'  => 'home/createSensor',
-                    'icon'  => 'plus',
-                ],
-            ],
-            'can' => 'user-admin',
-        ],
+        // [
+        //     'text' => 'REGISTER',
+        //     'url'  => 'home/register',
+        //     'icon' => 'plus',
+        //     'submenu' => [
+        //         [
+        //             'text' => 'Users',
+        //             'url'  => 'home/createUser',
+        //             'icon'  => 'user-plus',
+        //         ],
+        //         [
+        //             'text' => 'Equipments',
+        //             'url'  => 'home/createEquipments',
+        //             'icon'  => 'plus',
+        //         ],
+        //         [
+        //             'text' => 'Sensors',
+        //             'url'  => 'home/createSensor',
+        //             'icon'  => 'plus',
+        //         ],
+        //     ],
+        //     'can' => 'user-admin',
+        // ],
         [
             'text' => 'LISTING',
             'url' => 'home/listing',

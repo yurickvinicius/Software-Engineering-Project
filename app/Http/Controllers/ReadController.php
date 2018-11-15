@@ -25,8 +25,8 @@ class ReadController extends Controller
             ->where('equipament_id','=',$request->id)
             ->orderBy('id', 'desc')
             ->get();
-        
-        return json_encode($sensors);        
+
+        return json_encode($sensors);
     }
 
     public function read(Request $request){
@@ -76,9 +76,10 @@ class ReadController extends Controller
     }
 
     public function reading(Request $request) {
+        dd($request);
         $dataInit = $request->dataInit . " 00:00:00";
         $dataFin = $request->dataFin . " 23:59:59";
-        
+
         $equipaments = $this->equipmentModel
         ->where('equipaments.in_use','<>',0)
         ->get();
@@ -88,10 +89,12 @@ class ReadController extends Controller
         ->leftjoin('sensors', 'sensors.id', '=', 'reads.sensor_id')
         ->leftjoin('equipaments', 'equipaments.id', '=', 'reads.equipament_id')
         ->where('equipaments.id', '=', $request->equipament)
-        ->where('reads.created_at', '>', $dataInit)
-        ->where('reads.created_at', '<', $dataFin)
+        ->where('reads.created_at', '>=', $dataInit)
+        ->where('reads.created_at', '<=', $dataFin)
+        ->where('equipaments.in_use','<>',0)
+        // ->where('sensors.id', '=', $request->sensors[])
         ->orderBy('sensors.name')
-        ->get();
+        ->paginate(10);
 
         return view('read.reader', compact('equipaments', 'reads'));
     }
