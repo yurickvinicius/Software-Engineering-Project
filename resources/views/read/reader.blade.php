@@ -99,21 +99,21 @@
 
 @section('css')
 <style>
-.div-button {
+/* .div-button {
     padding-right: 20px;
 }
 
 .div-table {
     margin-top: 30px;
-}
+} */
 
-td {
+/* td {
     width: 35px;
     text-align: center;
-}
+} */
 
 th {
-    width: 35px;
+    /* width: 35px; */
     text-align: center;
 }
 </style>

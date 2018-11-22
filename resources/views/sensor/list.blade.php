@@ -96,18 +96,23 @@
         </div>
         {!! $sensors->links() !!}
     </div>
-    @stop
+</div>
+@stop
 
-    @section('css')
-    <style>
-    td {
-        width: 35px;
-        text-align: center;
-    }
+@section('css')
+<style>
+/* td {
+    width: 35px;
+    text-align: center;
+} */
 
-    th {
-        width: 35px;
-        text-align: center;
-    }
+th {
+    /* width: 35px;*/
+    text-align: center;
+}
+
+.list-action{
+text-align: center;
+}
 </style>
 @stop

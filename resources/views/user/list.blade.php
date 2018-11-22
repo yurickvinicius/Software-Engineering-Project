@@ -107,18 +107,23 @@
         </div>
         {!! $users->links() !!}
     </div>
-    @stop
+</div>
+@stop
 
-    @section('css')
-    <style>
-    td {
-        width: 30px;
-        text-align: center;
-    }
+@section('css')
+<style>
+/* td {
+width: 30%;
+text-align: center;
+} */
 
-    th {
-        width: 30px;
-        text-align: center;
-    }
+th {
+/* width: 30%; */
+text-align: center;
+}
+
+.list-action{
+text-align: center;
+}
 </style>
 @stop
