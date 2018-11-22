@@ -96,13 +96,11 @@
 
 @section('css')
 <style>
-/* td {
-    width: 35px;
+td {
     text-align: center;
-} */
+}
 
 th {
-    /* width: 35px; */
     text-align: center;
 }
 

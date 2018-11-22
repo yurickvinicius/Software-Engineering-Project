@@ -112,18 +112,16 @@
 
 @section('css')
 <style>
-/* td {
-width: 30%;
-text-align: center;
-} */
+td {
+    text-align: center;
+}
 
 th {
-/* width: 30%; */
-text-align: center;
+    text-align: center;
 }
 
 .list-action{
-text-align: center;
+    text-align: center;
 }
 </style>
 @stop

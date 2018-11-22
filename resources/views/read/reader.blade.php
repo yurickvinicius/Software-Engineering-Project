@@ -25,9 +25,19 @@
                     <div class="col-sm-7">
                         <select class="form-control" name="equipament" id="selEquipament">
                             <option value="0">Select a equipament</option>
+                            @if(isset($request))
+                            @foreach($equipaments as $equipament)
+                            @if($request->equipament == $equipament->id)
+                            <option value="{{ $equipament->id }}" selected>{{ $equipament->name }}</option>
+                            @else
+                            <option value="{{ $equipament->id }}">{{ $equipament->name }}</option>
+                            @endif
+                            @endforeach
+                            @else
                             @foreach($equipaments as $equipament)
                             <option value="{{ $equipament->id }}">{{ $equipament->name }}</option>
                             @endforeach
+                            @endif
                         </select>
                     </div>
                 </div>
@@ -46,13 +56,21 @@
                     <div>
                         <label class="control-label col-sm-3" for="dataInit">Data Início:</label>
                         <div class="col-sm-3">
+                            @if(isset($request))
+                            <input type="date" id="dataInit" name="dataInit" class="form-control campo-metade" placeholder="Mínimo" value="{{ $request->dataInit}}">
+                            @else
                             <input type="date" id="dataInit" name="dataInit" class="form-control campo-metade" placeholder="Mínimo">
+                            @endif
                         </div>
                     </div>
                     <div>
                         <label class="control-label col-sm-1" for="dataFin">Data Fim:</label>
                         <div class="col-sm-3">
+                            @if(isset($request))
+                            <input type="date" id="dataFin" name="dataFin" class="form-control campo-metade" placeholder="Máximo" value="{{ $request->dataFin}}">
+                            @else
                             <input type="date" id="dataFin" name="dataFin" class="form-control campo-metade" placeholder="Máximo">
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -77,6 +95,7 @@
                     </tr>
                 </thead>
 
+                @if(isset($reads))
                 @if(count($reads) == 0)
                 <tr>
                     <td colspan="99" class="text-center">No read found.</td>
@@ -91,6 +110,11 @@
                     <td>{{ $read->created_at }}</td>
                 </tr>
                 @endforeach
+                @else
+                <tr>
+                    <td colspan="99" class="text-center">No read found.</td>
+                </tr>
+                @endif
             </table>
         </div>
     </div>
@@ -99,21 +123,19 @@
 
 @section('css')
 <style>
-/* .div-button {
-    padding-right: 20px;
+.div-button {
+padding-right: 20px;
 }
 
 .div-table {
-    margin-top: 30px;
-} */
+margin-top: 30px;
+}
 
-/* td {
-    width: 35px;
+td {
     text-align: center;
-} */
+}
 
 th {
-    /* width: 35px; */
     text-align: center;
 }
 </style>

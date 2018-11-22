@@ -21,10 +21,10 @@ class ReadController extends Controller
 
     public function listSensors(Request $request){
         $sensors = $this->sensorModel
-            ->where('in_use','<>','0')
-            ->where('equipament_id','=',$request->id)
-            ->orderBy('id', 'desc')
-            ->get();
+        ->where('in_use','<>','0')
+        ->where('equipament_id','=',$request->id)
+        ->orderBy('id', 'desc')
+        ->get();
 
         return json_encode($sensors);
     }
@@ -71,34 +71,37 @@ class ReadController extends Controller
         ->where('equipaments.in_use','<>',0)
         ->get();
 
-        $reads = [];
-        return view('read.reader', compact('sensors', 'equipaments', 'reads'));
+        return view('read.reader', compact('equipaments'));
     }
 
     public function reading(Request $request) {
-        ///dd($request->all());
-        $request->sensors = array_values($request->sensors);
-        dd($request->sensors); //// Array que contem os sensores no formato key=>id
-
-        $dataInit = $request->dataInit . " 00:00:00";
-        $dataFin = $request->dataFin . " 23:59:59";
-
+        // dd($request->all());
         $equipaments = $this->equipmentModel
         ->where('equipaments.in_use','<>',0)
         ->get();
+        
+        if(isset($request->sensors)) {
+            $request->sensors = array_values($request->sensors);
+            // dd($request->sensors); //// Array que contem os sensores no formato key=>id
 
-        $reads =  $this->readModel
-        ->select('sensors.name as sensor', 'equipaments.name as equipament', 'reads.value as value', 'reads.created_at as created_at')
-        ->leftjoin('sensors', 'sensors.id', '=', 'reads.sensor_id')
-        ->leftjoin('equipaments', 'equipaments.id', '=', 'reads.equipament_id')
-        ->where('equipaments.id', '=', $request->equipament)
-        ->where('reads.created_at', '>=', $dataInit)
-        ->where('reads.created_at', '<=', $dataFin)
-        ->where('equipaments.in_use','<>',0)
-        // ->where('sensors.id', '=', $request->sensors[])
-        ->orderBy('sensors.name')
-        ->paginate(10);
+            $dataInit = $request->dataInit . " 00:00:00";
+            $dataFin = $request->dataFin . " 23:59:59";
 
-        return view('read.reader', compact('equipaments', 'reads'));
+            $reads =  $this->readModel
+            ->select('sensors.name as sensor', 'equipaments.name as equipament', 'reads.value as value', 'reads.created_at as created_at')
+            ->leftjoin('sensors', 'sensors.id', '=', 'reads.sensor_id')
+            ->leftjoin('equipaments', 'equipaments.id', '=', 'reads.equipament_id')
+            ->where('equipaments.id', '=', $request->equipament)
+            ->where('reads.created_at', '>=', $dataInit)
+            ->where('reads.created_at', '<=', $dataFin)
+            ->where('equipaments.in_use','<>',0)
+            // ->where('sensors.id', '=', $request->sensors[])
+            ->orderBy('sensors.name')
+            ->paginate(10);
+
+            return view('read.reader', compact('equipaments', 'reads', 'request'));
+        } else {
+            return view('read.reader', compact('equipaments', 'request'));
+        }
     }
 }
