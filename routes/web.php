@@ -17,32 +17,32 @@ $this->group(['middleware' => ['auth'], 'prefix' => 'home'], function(){
     Route::post('/settings', 'UserController@settingsUpdate')->name('settingsUpdate');
     Route::get('/deactivate', 'UserController@deactivateUser')->name('deactivateUser');
 
-    Route::get('/createUser', 'UserController@createUser')->name('createUser');
-    Route::post('/storeUser', 'UserController@storeUser')->name('storeUser');
-    Route::get('/listingUsers', 'UserController@userListing')->name('userListing');
-    Route::get('/showUser', 'UserController@showUser')->name('showUser');
+    Route::get('/createUser', 'UserController@createUser')->name('createUser')->middleware(['admin']);
+    Route::post('/storeUser', 'UserController@storeUser')->name('storeUser')->middleware(['admin']);    
+    Route::get('/listingUsers', 'UserController@userListing')->name('userListing')->middleware(['admin']);
+    Route::get('/showUser', 'UserController@showUser')->name('showUser')->middleware(['admin']);
 
-    Route::get('/editUser/{id}', 'UserController@editUser')->name('editUser');
-    Route::post('/updateUser', 'UserController@updateUser')->name('updateUser');
-    Route::get('/destroyUser/{id}', 'UserController@destroy')->name('userDestroy');
+    Route::get('/editUser/{id}', 'UserController@editUser')->name('editUser')->middleware(['admin']);
+    Route::post('/updateUser', 'UserController@updateUser')->name('updateUser')->middleware(['admin']);
+    Route::get('/destroyUser/{id}', 'UserController@destroy')->name('userDestroy')->middleware(['admin']);
 
-    Route::get('/createEquipments', 'EquipmentsController@createEquipments')->name('createEquipments');
-    Route::post('/storeEquipment', 'EquipmentsController@storeEquipment')->name('storeEquipment');
+    Route::get('/createEquipments', 'EquipmentsController@createEquipments')->name('createEquipments')->middleware(['admin']);
+    Route::post('/storeEquipment', 'EquipmentsController@storeEquipment')->name('storeEquipment')->middleware(['admin']);
     Route::get('/listingEquipments', 'EquipmentsController@listingEquipments')->name('listingEquipments');
-    Route::get('/destroyEquipment/{id}', 'EquipmentsController@destroyEquipments')->name('destroyEquipment');
+    Route::get('/destroyEquipment/{id}', 'EquipmentsController@destroyEquipments')->name('destroyEquipment')->middleware(['admin']);
     Route::get('/showEquipment', 'EquipmentsController@showEquipments')->name('showEquipment');
 
-    Route::get('/editEquipment/{id}', 'EquipmentsController@editEquipment')->name('editEquipment');
-    Route::post('/updateEquipment', 'EquipmentsController@updateEquipment')->name('updateEquipment');
+    Route::get('/editEquipment/{id}', 'EquipmentsController@editEquipment')->name('editEquipment')->middleware(['admin']);
+    Route::post('/updateEquipment', 'EquipmentsController@updateEquipment')->name('updateEquipment')->middleware(['admin']);
 
-    Route::get('/createSensor', 'SensorController@createSensor')->name('createSensor');
-    Route::post('/storeSensor', 'SensorController@storeSensor')->name('storeSensor');
+    Route::get('/createSensor', 'SensorController@createSensor')->name('createSensor')->middleware(['admin']);
+    Route::post('/storeSensor', 'SensorController@storeSensor')->name('storeSensor')->middleware(['admin']);
     Route::get('/listingSensors', 'SensorController@listingSensors')->name('listingSensors');
-    Route::get('/destroySensor/{id}', 'SensorController@destroySensor')->name('destroySensor');        
+    Route::get('/destroySensor/{id}', 'SensorController@destroySensor')->name('destroySensor')->middleware(['admin']);        
     Route::get('/showSensor', 'SensorController@showSensor')->name('showSensor');
 
-    Route::get('/editSensor/{id}', 'SensorController@editSensor')->name('editSensor');
-    Route::post('/updateSensor', 'SensorController@updateSensor')->name('updateSensor');
+    Route::get('/editSensor/{id}', 'SensorController@editSensor')->name('editSensor')->middleware(['admin']);
+    Route::post('/updateSensor', 'SensorController@updateSensor')->name('updateSensor')->middleware(['admin']);
 
     Route::get('/readingReport', 'ReadController@readingReport')->name('readingReport');
     Route::post('/readingReport', 'ReadController@reading')->name('reading');
