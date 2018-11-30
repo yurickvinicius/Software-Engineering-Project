@@ -32,7 +32,7 @@ class LoginController extends Controller
         if(Auth::attempt($credentials)){
             ///echo Auth::user()->name.'-';
             ///die('okk');
-            return view('home');
+            return redirect('/home');
         }else{
             ///die('error');
             return redirect()->back();
