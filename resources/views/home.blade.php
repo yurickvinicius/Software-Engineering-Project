@@ -9,7 +9,15 @@
 @section('content')
     <p>The system have with function the register of sensors of any natureza for captation of 
         datas, the control and manager of information geted and transfered for a hardware for a 
-        address especifc web using request HTTP\GET</p>               
+        address especifc web using request HTTP\GET</p>
+        
+        <div id="showAverage" class="col-md-12">
+            <span id="averageTotalSensor"></span>
+        </div>
+
+        <div class="col-md-12">
+            <!--<div id="chartContainer1" style="height: 300px; width: 100%;"></div>-->
+        </div>
 
 
 
@@ -104,10 +112,6 @@
     
     }
     </script>
-
-<div id="chartContainer1" style="height: 300px; width: 100%;"></div>
-
-
 
 
 @stop

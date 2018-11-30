@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Equipament;
 use App\Sensor;
 use App\Read;
+use Illuminate\Support\Facades\DB;
 
 class ReadController extends Controller
 {
@@ -97,11 +98,20 @@ class ReadController extends Controller
             ->where('equipaments.in_use','<>',0)
             // ->where('sensors.id', '=', $request->sensors[])
             ->orderBy('sensors.name')
-            ->paginate(10);
+            ->get();
 
             return view('read.reader', compact('equipaments', 'reads', 'request'));
         } else {
             return view('read.reader', compact('equipaments', 'request'));
         }
+    }
+
+    public function sensorAverage(){
+        ///$averageAll = DB::select('select avg(id), avg(sensor_id), count(*) from reads');
+        ///$sql = 'select sensor_id, count(*) as total, round(avg(id)) as media_total, round(avg(sensor_id)) as media_sensores from reads where created_at >= CURRENT_DATE group by sensor_id';
+        
+        $averageAll = DB::select('select sensor_id, count(*) as total from reads group by sensor_id');
+      
+        return json_encode($averageAll);
     }
 }

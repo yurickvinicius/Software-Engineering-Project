@@ -2,6 +2,52 @@ var url = 'http://'+$(location).attr('host');
 
 $(document).ready(function(){
 
+/* ########################### */
+///setInterval(function() {
+    $('#showAverage').html('')
+    $.ajax({
+        url: url + '/home/read/sensors/average',
+        dataType: "json",
+        cache: false,
+        success: function (datas) {
+            ///alert(user.name);
+            ///console.log(datas)
+
+            var aux=0;
+            var total=0;
+            var media=0;
+            for(var i =0; i<datas.length; i++){
+                ///alert(datas[i]['sensor_id'])
+
+                /*
+                $('#showAverage').append('\
+                    <div class="col-md-3">\
+                        <span>ID:<b>'+datas[i]['sensor_id']+'</b></span><br>\
+                        <span>Total:<b>'+datas[i]['total']+'</b></span>\
+                    </div>\
+                ')
+                */
+
+                total = datas[i]['total'] + aux;
+                aux = total;                
+            }
+            
+            media = Math.round(total/i);
+
+            $('#showAverage').append('\
+            Total Sensor: '+i+'<br>\
+            Total de Leitura: '+total+'<br>\
+            Media: '+media+'\
+            ')
+
+        },
+    });
+///}, 5000)
+
+/*setInterval(function() {
+    alert('vinicius')
+    }, 4000)
+*/
     
 /* ############################## */
     $('#selEquipament').change(function(){

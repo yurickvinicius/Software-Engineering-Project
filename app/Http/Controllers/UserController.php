@@ -139,13 +139,6 @@ class UserController extends Controller
         return view('user.list', compact('users'));
     }
 
-    /*
-    public function showUser(Request $request) {
-        $user = $this->userModel->find($request->id);
-        return view('user.show', compact('user'));
-    }
-    */
-
     public function showUser(Request $request) {
         $user = $this->userModel->find($request->id);
         return json_encode($user);  
@@ -176,5 +169,14 @@ class UserController extends Controller
         return redirect()
         ->back()
         ->with('error', 'Failed update user!');
+    }
+    
+    public function listAllUserComun(){        
+        $users = $this->userModel
+            ->where('type','=', 2 )
+            ->select('id','name')
+            ->get();
+
+        die($users);
     }
 }

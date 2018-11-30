@@ -21,6 +21,7 @@ $this->group(['middleware' => ['auth'], 'prefix' => 'home'], function(){
     Route::post('/storeUser', 'UserController@storeUser')->name('storeUser')->middleware(['admin']);    
     Route::get('/listingUsers', 'UserController@userListing')->name('userListing')->middleware(['admin']);
     Route::get('/showUser', 'UserController@showUser')->name('showUser')->middleware(['admin']);
+    ///Route::get('/show/comun/user', 'UserController@listAllUserComun')->name('showComunUser')->middleware(['admin']);
 
     Route::get('/editUser/{id}', 'UserController@editUser')->name('editUser')->middleware(['admin']);
     Route::post('/updateUser', 'UserController@updateUser')->name('updateUser')->middleware(['admin']);
@@ -46,7 +47,9 @@ $this->group(['middleware' => ['auth'], 'prefix' => 'home'], function(){
 
     Route::get('/readingReport', 'ReadController@readingReport')->name('readingReport');
     Route::post('/readingReport', 'ReadController@reading')->name('reading');
-    Route::get('/read/list/sensors', 'ReadController@listSensors')->name('readListSensors');    
+    Route::get('/read/list/sensors', 'ReadController@listSensors')->name('readListSensors'); 
+    
+    Route::get('/read/sensors/average', 'ReadController@sensorAverage')->name('sensorsAverage');     
 });
 
 ///Auth::routes();

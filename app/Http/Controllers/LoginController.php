@@ -24,14 +24,17 @@ class LoginController extends Controller
 
         $credentials = [
             'login' => $data['login'],
-            'password' => $data['password']
+            'password' => $data['password'],  
         ];
+
+        ///die(print_r($credentials));
 
         if(Auth::attempt($credentials)){
             ///echo Auth::user()->name.'-';
             ///die('okk');
             return view('home');
         }else{
+            ///die('error');
             return redirect()->back();
         }
     }
