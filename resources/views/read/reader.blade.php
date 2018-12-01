@@ -89,6 +89,7 @@
                 <thead>
                     <tr class="active">
                         <!-- <th>Equipament</th> -->
+                        <th>*</th>
                         <th>Sensor</th>
                         <th>Value</th>
                         <th>Date reader</th>
@@ -101,15 +102,18 @@
                     <td colspan="99" class="text-center">No read found.</td>
                 </tr>
                 @endif
-
-                @foreach($reads as $read)
-                <tr>
-                    <!-- <td>{{ $read->equipament}}</td> -->
-                    <td>{{ $read->sensor }}</td>
-                    <td>{{ $read->value }}</td>
-                    <td>{{ $read->created_at }}</td>
-                </tr>
-                @endforeach
+                  
+                        <?php $cont=1 ?>
+                        @foreach ($reads as $read)
+                            <tr>
+                                <td>{{ $cont++ }}</td>
+                                <td>{{ $read->sensor }}</td>
+                                <td>{{ $read->value }}</td>
+                                <td>{{ $read->created_at }}</td>
+                            </tr>                            
+                        @endforeach                                            
+            
+                
                 @else
                 <tr>
                     <td colspan="99" class="text-center">No read found.</td>
@@ -117,6 +121,7 @@
                 @endif
             </table>
         </div>
+
     </div>
 </div>
 @stop

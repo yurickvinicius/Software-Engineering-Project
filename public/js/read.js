@@ -1,53 +1,79 @@
 var url = 'http://'+$(location).attr('host');
 
+//// Char home
+window.onload = function () {
+        
+    var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        theme: "light2", // "light1", "light2", "dark1", "dark2"
+        title:{
+            text: "Week"
+        },        
+        data: [{        
+            type: "column",  
+            showInLegend: true, 
+            legendMarkerColor: "grey",
+            legendText: "MMbbl = one million barrels",
+            dataPoints: [      
+                { y: 300878, label: "Sunday" },
+                { y: 266455,  label: "Monday" },
+                { y: 169709,  label: "Tuesday" },
+                { y: 158400,  label: "Wednesday" },
+                { y: 142503,  label: "Thursday" },
+                { y: 101500, label: "Friday" },
+                { y: 97800,  label: "Saturday" },   
+            ]
+        }]
+    });
+    chart.render();    
+}
+
+function datasHome(){
+    var totalReads = 0;
+    var auxTotalReads = 0;
+
+    setInterval(function() {
+
+        if((auxTotalReads != totalReads) && (auxTotalReads != 0)){
+            $('#divDataReads').removeClass('small-box bg-red');
+            $('#divDataReads').addClass('small-box bg-green');
+            $('#onOffReads').html('<b>Read Online</b>');
+        }else{
+            $('#divDataReads').removeClass('small-box bg-green');
+            $('#divDataReads').addClass('small-box bg-red');
+            $('#onOffReads').html('Read Ofline');
+        }
+
+        $.ajax({
+            url: url + '/home/read/sensors/average',
+            dataType: "json",
+            cache: false,
+            success: function (datas) {
+                ///alert(user.name);
+                ///console.log(datas)
+    
+                var aux=0;
+                var media=0;
+                for(var i =0; i<datas.length; i++){
+                    totalReads = datas[i]['total'] + aux;
+                    aux = totalReads;                
+                }
+                
+                ///media = Math.round(total/i);
+                $('#dataReads').html(totalReads);
+    
+            },
+        });
+
+        auxTotalReads = totalReads;
+
+    }, 3000)    
+
+}
+
 $(document).ready(function(){
 
-/* ########################### */
-///setInterval(function() {
-    $('#showAverage').html('')
-    $.ajax({
-        url: url + '/home/read/sensors/average',
-        dataType: "json",
-        cache: false,
-        success: function (datas) {
-            ///alert(user.name);
-            ///console.log(datas)
-
-            var aux=0;
-            var total=0;
-            var media=0;
-            for(var i =0; i<datas.length; i++){
-                ///alert(datas[i]['sensor_id'])
-
-                /*
-                $('#showAverage').append('\
-                    <div class="col-md-3">\
-                        <span>ID:<b>'+datas[i]['sensor_id']+'</b></span><br>\
-                        <span>Total:<b>'+datas[i]['total']+'</b></span>\
-                    </div>\
-                ')
-                */
-
-                total = datas[i]['total'] + aux;
-                aux = total;                
-            }
-            
-            media = Math.round(total/i);
-
-            $('#showAverage').append('\
-            Total Sensor: '+i+'<br>\
-            Total de Leitura: '+total+'<br>\
-            Media: '+media+'\
-            ')
-
-        },
-    });
-///}, 5000)
-
-/*setInterval(function() {
-    alert('vinicius')
-    }, 4000)
-*/
+    datasHome();
     
 /* ############################## */
     $('#selEquipament').change(function(){

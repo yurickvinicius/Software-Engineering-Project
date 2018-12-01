@@ -29,7 +29,7 @@
             <!-- ./col -->
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
-                <div class="small-box bg-green">
+                <div class="small-box bg-blue">
                     <div class="inner">
                         <h3>{{ $sensors }}</h3>
 
@@ -43,11 +43,11 @@
             </div>
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
-                <div class="small-box bg-red">
+                <div id="divDataReads" class="small-box bg-red">
                     <div class="inner">
-                        <h3>{{ $reads}}</h3>
+                        <h3 id="dataReads">{{ $reads}}</h3>
 
-                        <p>Sensors Online</p>
+                        <p id="onOffReads">Read Ofline</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-stats-bars"></i>
@@ -70,9 +70,80 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+
+                <div class="col-md-12">
+                        <div class="box">
+                          <div class="box-header with-border">
+                            <h3 class="box-title">Sensor Week Report</h3>                                          
+                          </div>
+                          <!-- /.box-header -->
+                          <div class="box-body">
+                            <div class="row">
+                              <div class="col-md-12">                     
+              
+                                <div>
+                                    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                                </div>
+
+                                <!-- /.chart-responsive -->
+                              </div>
+           
+                            </div>
+                            <!-- /.row -->
+                          </div>
+                          <!-- ./box-body -->
+                          <div class="box-footer">
+                            <div class="row">
+                              <div class="col-sm-3 col-xs-6">
+                                <div class="description-block border-right">
+                                  <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 17%</span>
+                                  <h5 class="description-header">1050</h5>
+                                  <span class="description-text">Média Semanal</span>
+                                </div>
+                                <!-- /.description-block -->
+                              </div>
+                              <!-- /.col -->
+                              <div class="col-sm-3 col-xs-6">
+                                <div class="description-block border-right">
+                                  <span class="description-percentage text-yellow"><i class="fa fa-caret-left"></i> 0%</span>
+                                  <h5 class="description-header">Sensor s02</h5>
+                                  <span class="description-text">Mediana</span>
+                                </div>
+                                <!-- /.description-block -->
+                              </div>
+                              <!-- /.col -->
+                              <div class="col-sm-3 col-xs-6">
+                                <div class="description-block border-right">
+                                  <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 20%</span>
+                                  <h5 class="description-header">35</h5>
+                                  <span class="description-text">Desvio Padão</span>
+                                </div>
+                                <!-- /.description-block -->
+                              </div>
+                              <!-- /.col -->
+                              <div class="col-sm-3 col-xs-6">
+                                <div class="description-block">
+                                  <span class="description-percentage text-red"><i class="fa fa-caret-down"></i> 18%</span>
+                                  <h5 class="description-header">1050</h5>
+                                  <span class="description-text">Moda Semanal</span>
+                                </div>
+                                <!-- /.description-block -->
+                              </div>
+                            </div>
+                            <!-- /.row -->
+                          </div>
+                          <!-- /.box-footer -->
+                        </div>
+                        <!-- /.box -->
+                      </div>
+
+        </div>
+
+
     </div>
 </div>
-
 
 
 @stop
