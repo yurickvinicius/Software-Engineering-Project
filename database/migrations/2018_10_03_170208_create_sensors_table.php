@@ -25,6 +25,13 @@ class CreateSensorsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
         });
+
+        /*
+        Schema::table('users', function(Blueprint $table) {
+            $table->integer('sensor_id')->nullable();
+            $table->foreign('sensor_id')->references('id')->on('sensors');
+        });
+        */
     }
 
     /**

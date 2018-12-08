@@ -7,6 +7,7 @@ use App\Equipament;
 use App\Sensor;
 use App\Read;
 use Illuminate\Support\Facades\DB;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class ReadController extends Controller
 {

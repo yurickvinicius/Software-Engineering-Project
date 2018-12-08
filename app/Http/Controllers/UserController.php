@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\UserRequest;
 use App\Http\Requests\UserEditRequest;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -171,12 +172,30 @@ class UserController extends Controller
         ->with('error', 'Failed update user!');
     }
     
-    public function listAllUserComun(){        
+    public function listAllUserComun(Request $request){
+        $sensorId = $request->sensor_id;
+        ///die(json_encode($request->sensor_id));
+        /*
         $users = $this->userModel
             ->where('type','=', 2 )
             ->select('id','name')
             ->get();
+        */
+        
+        $sql = "select users.id, name, user_id
+        from users 
+        LEFT JOIN user_sensors ON user_sensors.user_id = users.id
+        where sensor_id = ".$sensorId."
+        
+        union all
+        
+        select id, name, null as null
+        from users
+        where id NOT IN (select user_id from user_sensors where sensor_id = ".$sensorId.") and type = '2'
+        order by name";
+        
+        $users = DB::select($sql);
 
-        die($users);
+        return json_encode($users);
     }
 }

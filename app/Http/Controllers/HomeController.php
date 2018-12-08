@@ -7,6 +7,8 @@ use App\Equipament;
 use App\Sensor;
 use App\Read;
 use App\User;
+use App\UserSensor;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -24,14 +26,16 @@ class HomeController extends Controller
     private $sensorModel;
     private $readModel;
     private $userModel;
+    private $userSensorModel;
 
-    public function __construct(Equipament $equipament, Sensor $sensor, Read $read, User $user){
+    public function __construct(Equipament $equipament, Sensor $sensor, Read $read, User $user, UserSensor $userSensorModel){
         $this->middleware('auth');
 
         $this->equipmentModel = $equipament;
         $this->sensorModel = $sensor;
         $this->readModel = $read;
         $this->userModel = $user;
+        $this->userSensorModel = $userSensorModel;
     }
 
     /**
@@ -42,11 +46,19 @@ class HomeController extends Controller
     public function index()
     {
 
-        $equipments = $this->equipmentModel::count();
-        $sensors = $this->sensorModel::count();
-        $reads = $this->readModel::count();
-        $users = $this->userModel::count();
+        if(Auth::user()->type == 1){
+            $equipments = $this->equipmentModel::count();
+            $sensors = $this->sensorModel::count();
+            $reads = $this->readModel::count();
+            $users = $this->userModel::count();
+            return view('home', compact('equipments', 'sensors', 'reads', 'users'));
+        }else{
+            $userSensors = $this->userSensorModel
+                ->where('user_id','=',Auth::user()->id)
+                ->get();
+                return view('home', compact('userSensors'));
+        }
 
-        return view('home', compact('equipments', 'sensors', 'reads', 'users'));
+        
     }
 }
