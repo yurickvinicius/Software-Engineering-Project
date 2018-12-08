@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Equipament;
 use App\Sensor;
+use App\UserSensor;
 use Illuminate\Http\Request;
 use App\Http\Requests\SensorRequest;
 
@@ -11,10 +12,12 @@ class SensorController extends Controller
 {
     private $equipamentModel;
     private $sensorModel;
+    private $userSensorModel;
 
-    public function __construct(Equipament $equipament, Sensor $sensor){
+    public function __construct(Equipament $equipament, Sensor $sensor, UserSensor $userSensor){
         $this->equipamentModel = $equipament;
         $this->sensorModel = $sensor;
+        $this->userSensorModel = $userSensor;
     }
 
     public function createSensor() {
@@ -90,5 +93,23 @@ class SensorController extends Controller
         return redirect()
                     ->back()
                     ->with('error', 'Failed to update sensor!');
+    }
+
+    public function rent(Request $request){
+        $users = $request->users;
+        $idSensor = $request->id_sensor;
+
+        $this->userSensorModel
+            ->where('sensor_id','=',$idSensor)
+            ->delete();
+
+        foreach ($users as $user){
+            $userSensor = [
+                'user_id' => $user,
+                'sensor_id' => $idSensor
+            ];
+
+            $this->userSensorModel->create($userSensor);
+        }
     }
 }

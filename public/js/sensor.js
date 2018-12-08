@@ -66,3 +66,59 @@ function viewSensor(cod){
     });
 
 }
+
+
+function viewUserSensor(codSensor){
+
+    $('#hidCodSensor').val(codSensor)
+    $('#userSensor').html('')
+
+    $.ajax({
+        url: url + '/home/show/comun/user',
+        dataType: "json",
+        cache: false, 
+        data: {sensor_id:codSensor},       
+        success: function (users) {
+          ///alert(user.name);
+          console.log(users)
+
+          for(var i=0; i < users.length; i++){
+            checked = 'unchecked';
+            if(users[i].user_id != null)
+                checked = 'checked';
+
+            $('#userSensor').append('\
+            <form class="form-inline">\
+                <div class="checkbox">\
+                    <label>\
+                    <input '+checked+' value="'+users[i].id+'" type="checkbox"> <span id="userName_'+i+'">'+users[i].name+'</span>\
+                    </label>\
+                </div>\
+            </form>\
+            ')
+          }
+
+        },
+    });
+
+}
+
+
+function sensorRent(){
+
+    var codSensor = $('#hidCodSensor').val();
+    var users = [];
+
+    $("input[type=checkbox]").each(function () {
+        if (this.checked == true) 
+            users.push(this.value)
+    })    
+
+    $.ajax({
+        url: url + '/home/rent',
+        dataType: "json",
+        cache: false,
+        data: {users:users, id_sensor:codSensor},
+    });
+
+}

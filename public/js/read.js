@@ -67,7 +67,7 @@ function datasHome(){
 
         auxTotalReads = totalReads;
 
-    }, 3000)    
+    }, 4000)    
 
 }
 

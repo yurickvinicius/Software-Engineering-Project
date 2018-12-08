@@ -50,7 +50,7 @@
                         <a href="{{ route('destroySensor', ['id'=>$sensor->id]) }}" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></a>
                         <a href="{{ route('editSensor', $sensor->id)}}" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a>
                         <button data-toggle="modal" data-target="#sensorModal" onclick="viewSensor('{{ $sensor->id }}')" type="button" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></button>
-                        <button data-toggle="modal" data-target="#userSensorModal" onclick="viewUserSensor('{{ $sensor->id }}')" type="button" class="btn btn-default btn-sm"><i class="fa fa-user"></i></button>
+                        <button onclick="viewUserSensor({{ $sensor->id }})" data-toggle="modal" data-target="#userSensorModal" onclick="viewUserSensor('{{ $sensor->id }}')" type="button" class="btn btn-default btn-sm"><i class="fa fa-user"></i></button>
                     </td>
                     @endif
                     <!-- <td>{{ $sensor->id }}</td> -->

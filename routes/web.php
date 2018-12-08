@@ -20,8 +20,8 @@ $this->group(['middleware' => ['auth'], 'prefix' => 'home'], function(){
     Route::get('/createUser', 'UserController@createUser')->name('createUser')->middleware(['admin']);
     Route::post('/storeUser', 'UserController@storeUser')->name('storeUser')->middleware(['admin']);    
     Route::get('/listingUsers', 'UserController@userListing')->name('userListing')->middleware(['admin']);
-    Route::get('/showUser', 'UserController@showUser')->name('showUser')->middleware(['admin']);
-    ///Route::get('/show/comun/user', 'UserController@listAllUserComun')->name('showComunUser')->middleware(['admin']);
+    Route::get('/showUser', 'UserController@showUser')->name('showUser')->middleware(['admin']);    
+    Route::get('/show/comun/user', 'UserController@listAllUserComun')->name('showComunUser')->middleware(['admin']);
 
     Route::get('/editUser/{id}', 'UserController@editUser')->name('editUser')->middleware(['admin']);
     Route::post('/updateUser', 'UserController@updateUser')->name('updateUser')->middleware(['admin']);
@@ -41,6 +41,7 @@ $this->group(['middleware' => ['auth'], 'prefix' => 'home'], function(){
     Route::get('/listingSensors', 'SensorController@listingSensors')->name('listingSensors');
     Route::get('/destroySensor/{id}', 'SensorController@destroySensor')->name('destroySensor')->middleware(['admin']);        
     Route::get('/showSensor', 'SensorController@showSensor')->name('showSensor');
+    Route::get('/rent', 'SensorController@rent')->name('sensorRent');
 
     Route::get('/editSensor/{id}', 'SensorController@editSensor')->name('editSensor')->middleware(['admin']);
     Route::post('/updateSensor', 'SensorController@updateSensor')->name('updateSensor')->middleware(['admin']);
@@ -49,7 +50,7 @@ $this->group(['middleware' => ['auth'], 'prefix' => 'home'], function(){
     Route::post('/readingReport', 'ReadController@reading')->name('reading');
     Route::get('/read/list/sensors', 'ReadController@listSensors')->name('readListSensors'); 
     
-    Route::get('/read/sensors/average', 'ReadController@sensorAverage')->name('sensorsAverage');     
+    Route::get('/read/sensors/average', 'ReadController@sensorAverage')->name('sensorsAverage'); 
 });
 
 ///Auth::routes();
