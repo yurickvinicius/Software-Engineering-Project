@@ -7,6 +7,7 @@ use App\Sensor;
 use App\UserSensor;
 use Illuminate\Http\Request;
 use App\Http\Requests\SensorRequest;
+use Auth;
 
 class SensorController extends Controller
 {
@@ -34,15 +35,30 @@ class SensorController extends Controller
     }
 
     public function listingSensors() {
-        $sensors = $this->sensorModel
-            ->where('sensors.in_use','<>',0)
-            ->select('equipaments.name as equipament', 'sensors.*')
-            ->join('equipaments', 'sensors.equipament_id', '=', 'equipaments.id')
-            ->where('equipaments.in_use','<>',0)
-            ->orderBy('sensors.id', 'desc')
-            ->paginate(10);
 
-        return view('sensor.list', compact('sensors'));
+        if(Auth::user()->type == 1){
+            $sensors = $this->sensorModel
+                ->where('sensors.in_use','<>',0)
+                ->select('equipaments.name as equipament', 'sensors.*')
+                ->join('equipaments', 'sensors.equipament_id', '=', 'equipaments.id')
+                ->where('equipaments.in_use','<>',0)
+                ->orderBy('sensors.id', 'desc')
+                ->paginate(10);
+
+            return view('sensor.list', compact('sensors'));
+        }else{
+            $sensors = $this->sensorModel
+                ->where('sensors.in_use','<>',0)
+                ->select('equipaments.name as equipament', 'sensors.*')
+                ->join('equipaments', 'sensors.equipament_id', '=', 'equipaments.id')
+                ->where('equipaments.in_use','<>',0)
+                ->join('user_sensors', 'sensors.id', '=', 'user_sensors.sensor_id')
+                ->where('user_sensors.user_id','=',Auth::user()->id)                
+                ->orderBy('sensors.id', 'desc')
+                ->paginate(10);
+
+            return view('sensor.list', compact('sensors'));
+        }
 
     }
 

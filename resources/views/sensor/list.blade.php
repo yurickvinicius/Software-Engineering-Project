@@ -53,7 +53,7 @@
                         <button onclick="viewUserSensor({{ $sensor->id }})" data-toggle="modal" data-target="#userSensorModal" onclick="viewUserSensor('{{ $sensor->id }}')" type="button" class="btn btn-default btn-sm"><i class="fa fa-user"></i></button>
                     </td>
                     @endif
-                    <!-- <td>{{ $sensor->id }}</td> -->
+                    <td>#</td>
                     <td>{{ $sensor->name }}</td>
                     <td>{{ $sensor->equipament }}</td>
                 </tr>

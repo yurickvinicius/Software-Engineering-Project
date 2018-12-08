@@ -10,4 +10,8 @@ class UserSensor extends Model
         'sensor_id',
         'user_id',
     ];
+
+    public function sensor(){
+        return $this->hasOne(Sensor::class, 'id', 'sensor_id');
+    }
 }
