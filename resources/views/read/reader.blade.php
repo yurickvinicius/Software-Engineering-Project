@@ -79,7 +79,7 @@
                         <button type="submit" class="btn btn-success">Filtrar</button>
                     </div>
                     <div class="btn-group div-button">
-                        <a link="#" class="btn btn-primary">Gerar PDF</a>
+                        <a href="{{ route('readingPDF') }}" class="btn btn-primary">Gerar PDF</a>
                     </div>
                 </div>
             </form>
@@ -102,7 +102,7 @@
                     <td colspan="99" class="text-center">No read found.</td>
                 </tr>
                 @endif
-                  
+
                         <?php $cont=1 ?>
                         @foreach ($reads as $read)
                             <tr>
@@ -110,10 +110,8 @@
                                 <td>{{ $read->sensor }}</td>
                                 <td>{{ $read->value }}</td>
                                 <td>{{ $read->created_at }}</td>
-                            </tr>                            
-                        @endforeach                                            
-            
-                
+                            </tr>
+                        @endforeach
                 @else
                 <tr>
                     <td colspan="99" class="text-center">No read found.</td>

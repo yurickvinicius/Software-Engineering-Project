@@ -18,7 +18,7 @@ $this->group(['middleware' => ['auth'], 'prefix' => 'home'], function(){
     Route::get('/deactivate', 'UserController@deactivateUser')->name('deactivateUser');
 
     Route::get('/createUser', 'UserController@createUser')->name('createUser')->middleware(['admin']);
-    Route::post('/storeUser', 'UserController@storeUser')->name('storeUser')->middleware(['admin']);    
+    Route::post('/storeUser', 'UserController@storeUser')->name('storeUser')->middleware(['admin']);
     Route::get('/listingUsers', 'UserController@userListing')->name('userListing')->middleware(['admin']);
     Route::get('/showUser', 'UserController@showUser')->name('showUser')->middleware(['admin']);
     ///Route::get('/show/comun/user', 'UserController@listAllUserComun')->name('showComunUser')->middleware(['admin']);
@@ -39,7 +39,7 @@ $this->group(['middleware' => ['auth'], 'prefix' => 'home'], function(){
     Route::get('/createSensor', 'SensorController@createSensor')->name('createSensor')->middleware(['admin']);
     Route::post('/storeSensor', 'SensorController@storeSensor')->name('storeSensor')->middleware(['admin']);
     Route::get('/listingSensors', 'SensorController@listingSensors')->name('listingSensors');
-    Route::get('/destroySensor/{id}', 'SensorController@destroySensor')->name('destroySensor')->middleware(['admin']);        
+    Route::get('/destroySensor/{id}', 'SensorController@destroySensor')->name('destroySensor')->middleware(['admin']);
     Route::get('/showSensor', 'SensorController@showSensor')->name('showSensor');
 
     Route::get('/editSensor/{id}', 'SensorController@editSensor')->name('editSensor')->middleware(['admin']);
@@ -47,9 +47,12 @@ $this->group(['middleware' => ['auth'], 'prefix' => 'home'], function(){
 
     Route::get('/readingReport', 'ReadController@readingReport')->name('readingReport');
     Route::post('/readingReport', 'ReadController@reading')->name('reading');
-    Route::get('/read/list/sensors', 'ReadController@listSensors')->name('readListSensors'); 
-    
-    Route::get('/read/sensors/average', 'ReadController@sensorAverage')->name('sensorsAverage');     
+    Route::get('/read/list/sensors', 'ReadController@listSensors')->name('readListSensors');
+    Route::get('/readingPDF', 'ReadController@readingPDF')->name('readingPDF');
+
+    Route::get('/read/sensors/average', 'ReadController@sensorAverage')->name('sensorsAverage');
+
+    Route::get('/metricas', 'MetricasController@index')->name('metricas')->middleware(['admin']);
 });
 
 ///Auth::routes();

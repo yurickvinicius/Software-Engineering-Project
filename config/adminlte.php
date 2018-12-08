@@ -180,6 +180,11 @@ return [
                 ],
             ],
         ],
+        [
+            'text'        => 'MÉTRICAS',
+            'url'         => 'home/metricas',
+            'icon'        => 'file',
+        ],
     ],
 
     /*

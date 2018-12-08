@@ -80,26 +80,26 @@ class ReadController extends Controller
         $equipaments = $this->equipmentModel
         ->where('equipaments.in_use','<>',0)
         ->get();
-        
+
         if(isset($request->sensors)) {
             $dataInit = "'".$request->dataInit . " 00:00:00'";
             $dataFin = "'".$request->dataFin . " 23:59:59'";
 
             $sensors = '';
             foreach($request->sensors as $sensor){
-                $sensors .= (string)$sensor.',';                
+                $sensors .= (string)$sensor.',';
             }
             $sensors = substr($sensors, 0, -1);
 
-            $reads =  DB::select('select sensors.id as sensor_id, sensors.name as sensor, equipaments.name as equipament, reads.value as value, reads.created_at 
+            $reads =  DB::select('select sensors.id as sensor_id, sensors.name as sensor, equipaments.name as equipament, reads.value as value, reads.created_at
             from reads
-            LEFT JOIN sensors ON sensors.id = reads.sensor_id 
+            LEFT JOIN sensors ON sensors.id = reads.sensor_id
             LEFT JOIN equipaments ON equipaments.id = reads.equipament_id
             where equipaments.id = '.$request->equipament.' and
             reads.created_at >= '.$dataInit.' and
             reads.created_at <= '.$dataFin.' and
             sensors.id IN ('.$sensors.')');
-             
+
             /*
             $reads =  $this->readModel
                 ->select('sensors.name as sensor', 'equipaments.name as equipament', 'reads.value as value', 'reads.created_at as created_at')
@@ -110,9 +110,9 @@ class ReadController extends Controller
                 ->where('reads.created_at', '<=', $dataFin)
                 ->where('equipaments.in_use','<>',0)
                 ->whereIn('sensors.id',[$sensors])
-                ->get();                              
-            */          
-            
+                ->get();
+            */
+
             return view('read.reader', compact('equipaments', 'reads', 'request'));
         } else {
             return view('read.reader', compact('equipaments', 'request'));
@@ -122,9 +122,15 @@ class ReadController extends Controller
     public function sensorAverage(){
         ///$averageAll = DB::select('select avg(id), avg(sensor_id), count(*) from reads');
         ///$sql = 'select sensor_id, count(*) as total, round(avg(id)) as media_total, round(avg(sensor_id)) as media_sensores from reads where created_at >= CURRENT_DATE group by sensor_id';
-        
+
         $averageAll = DB::select('select sensor_id, count(*) as total from reads group by sensor_id');
-      
+
         return json_encode($averageAll);
+    }
+
+    public function readingPDF() {
+        return \PDF::loadView('pdf.reading')
+        ->download('relatorio/2018.pdf');
+        // ->stream();
     }
 }
