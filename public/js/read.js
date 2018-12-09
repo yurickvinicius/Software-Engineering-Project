@@ -93,6 +93,7 @@ $(document).ready(function(){
                     ///console.log(sensors)
 
                     var tam = sensors.length;
+                    $('#sQtdSensorsSel').html('<span class="green_one"> '+tam+' selected</span>')
                     for(var i=0; i < tam; i++){
                         $('#resultListSensors1').append('\
                             <div class="checkbox">\
@@ -116,9 +117,6 @@ $(document).ready(function(){
                         </div>\
                         ')
                     }
-
-                    $('#sQtdSensorsSel').html('<span class="green_one"> '+tam+' selected</span>')
-
 
                 },
             });
