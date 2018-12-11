@@ -118,11 +118,43 @@
                 </tr>
                 @endif
             </table>
+
+            <div id="chart-lines"></div><!-- Div que renderiza o grafico de linhas -->
+
         </div>
 
     </div>
 </div>
 @stop
+
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        //montando o array com os dados
+        var data = google.visualization.arrayToDataTable([
+
+            <?= $chart ?>
+        ]);
+
+        //opções para o gráfico linhas
+        var options1 = {
+          title: 'Analise de leituras por período',
+          hAxis: {title: 'Dias da Semana',  titleTextStyle: {color: 'Blue'}}//legenda na horizontal
+        };
+
+        //instanciando e desenhando o gráfico linhas
+        var linhas = new google.visualization.LineChart(document.getElementById('chart-lines'));
+        linhas.draw(data, options1);
+         
+    }
+</script>
+
+
+
 
 @section('css')
 <style>
@@ -134,6 +166,13 @@ padding-right: 20px;
 margin-top: 30px;
 }
 
+#chart-lines{
+    width: 900px; 
+    height: 500px;
+    margin: 50px auto;
+ }
+
+
 td {
     text-align: center;
 }
@@ -143,3 +182,5 @@ th {
 }
 </style>
 @stop
+
+

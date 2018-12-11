@@ -114,7 +114,16 @@ class ReadController extends Controller
                 ->get();
             */
 
-            return view('read.reader', compact('equipaments', 'reads', 'request'));
+            $chart =    "['Dia',        'S1',    'S2',   'S3'],".
+                "['Segunda',     20,      80,    45],".
+                "['Terca',       30,      30,    65],".
+                "['Quarta',      40,      60,    35],".
+                "['Quinta',      60,      45,    65],".
+                "['sexta',       60,      25,    45],".
+                "['Sabado',      70,      32,    32],".
+                "['Domingo',     45,      29,    50]";
+
+            return view('read.reader', compact('equipaments', 'reads', 'request', 'chart'));
         } else {
             return view('read.reader', compact('equipaments', 'request'));
         }
